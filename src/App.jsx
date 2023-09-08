@@ -1,9 +1,9 @@
-import Example from "./components/Example/Example";
+import FAQSection from "./components/FAQSection/FAQSection";
 function App() {
   // do not add css in this file
   return (
     <div>
-      <Example />
+      <FAQSection />
     </div>
   );
 }
