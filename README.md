@@ -13,8 +13,6 @@
 - Add code in that branch
 - Push code in **staging branch** not in **main branch**
 - Make a PR
-<<<<<<< Updated upstream
-=======
 
 
 ## To Run on local
@@ -23,4 +21,4 @@
 
 ## Deployment of Staging Branch
 https://staging-hacktober-fest.vercel.app/
->>>>>>> Stashed changes
+
