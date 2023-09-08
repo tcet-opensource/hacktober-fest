@@ -14,5 +14,10 @@
 - Push code in **staging branch** not in **main branch**
 - Make a PR
 
+
+## To Run on local
+1. ```pnpm install```
+2. ```pnpm run dev```
+
 ## Deployment of Staging Branch
 https://staging-hacktober-fest.vercel.app/
