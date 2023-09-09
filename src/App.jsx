@@ -1,9 +1,10 @@
-import Example from "./components/Example/Example";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   // do not add css in this file
   return (
     <div>
-      <Example />
+      <Footer />
     </div>
   );
 }
