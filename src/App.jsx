@@ -1,9 +1,9 @@
 import React from "react";
-import Example from "./components/Example/Example";
+import SponsorSection from "./components/SponsorSection/SponsorSection";
 function App() {
   return (
     <div className="">
-      <Example />
+      <SponsorSection />
     </div>
   );
 }
