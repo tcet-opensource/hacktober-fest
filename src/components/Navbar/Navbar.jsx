@@ -44,7 +44,7 @@ export default function Navbar() {
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline-offset-8" href="/">
+                  <a className="hover:underline" href="/">
                     {step.header}
                   </a>
                 </li>
