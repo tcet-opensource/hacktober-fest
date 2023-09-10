@@ -1,10 +1,10 @@
 import docLogo from "/SponsorSection/docLogo.svg";
-import { SponArr, ImgArr } from "./Data";
+import { SponArr, ImgArr } from "./data";
 import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
 function SponsorSection() {
   return (
     <section className="relative ">
-      <img src={sponsorGradient} className="absolute w-[450px] h-[450px]" />
+      <img src={sponsorGradient} className="absolute w-8/9 h-5/6" />
       <div className="relative px-6 py-9 md:p-16">
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12" key={index}>
