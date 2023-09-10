@@ -4,9 +4,10 @@ import axios from "axios";
 function Explore() {
   const [repos, setRepos] = useState([]);
   const [showMore, setShowMore] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const token = "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";
+    const token = "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";
 
     const axiosInstance = axios.create({
       baseURL: "https://api.github.com",
@@ -31,8 +32,8 @@ function Explore() {
                 `/repos/tcet-opensource/${repo.name}/languages`,
               );
               const languages = languagesResponse.data;
-              const firstLanguage =
-                Object.keys(languages)[0] || Object.keys(languages)[1] || null;
+              console.log(languages);
+              const firstLanguage = Object.keys(languages)[0] || null;
 
               return { ...repo, collaborators, firstLanguage };
             } catch (error) {
@@ -49,45 +50,67 @@ function Explore() {
       });
   }, []);
 
-  const displayedRepos = showMore ? repos.slice(1, 10) : repos.slice(1, 7);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const displayedRepos = showMore
+    ? windowWidth > 640
+      ? repos.slice(0, 9)
+      : repos.slice(0, 9)
+    : windowWidth < 640
+    ? repos.slice(0, 3)
+    : repos.slice(0, 6);
 
   return (
-    <div className="p-4 md:px-16">
-      <h2 className="text-indigo-100 text-4xl font-medium leading-9 my-6">
+    <div className="mx-6 my-9 sm:my-16 sm:mx-8 md:mx-16 xl:mx-32">
+      <h2 className="my-6 text-3xl font-medium leading-9 text-indigo-100 sm:text-4xl">
         Explore Open-Source Repo
       </h2>
-      <div className="grid relative grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
         {displayedRepos.map((repo) => (
           <div
             key={repo.id}
-            className=" w-full border-slate-700 border rounded-2xl overflow-hidden p-4  flex flex-col justify-between item-between gap-12 bg-gradient-custom"
+            className="flex flex-col justify-between w-full gap-12 p-2 overflow-hidden border border-slate-700 rounded-2xl sm:p-4 item-between bg-gradient-explore"
           >
             <div className="p-4">
-              <h1 className="self-stretch text-violet-200 text-xl font-semibold leading-8">
-                {repo.name}
-              </h1>
-              <p className="self-stretch text-slate-400 text-base font-normal leading-normal">
+              <a
+                href={`https://github.com/tcet-opensource/${repo.name}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h1 className="self-stretch text-xl xl:text-2xl font-semibold leading-8 text-violet-200 hover:underline">
+                  {repo.name}
+                </h1>
+              </a>
+              <p className="self-stretch text-base xl:text-lg font-normal leading-normal text-slate-400">
                 {repo.description}
               </p>
             </div>
-            <div className="flex items-center justify-between p-4 relative bottom-0">
-              <div className="flex items-center space-x-2">
-                <img
+            <div className="flex items-center justify-between p-4">
+              <div className="flex items-center space-x-1 sm:space-x-2 text-base xl:text-lg font-normal leading-normal">
+                <img  
                   src="/exploreSection/star.svg"
                   alt="Star Icon"
-                  className="w-4 h-4"
+                  className="w-4 xl:w-6"
                 />
-                <span className="text-stone-300 text-base font-medium leading-normal">
+                <span className="text-stone-300">
                   {repo.stargazers_count}
                 </span>
 
                 {repo.firstLanguage ? (
-                  <div className="px-2.5 py-0.5 rounded-[32px] border border-slate-700 justify-center items-center gap-2 flex">
+                  <div className="px-2.5 py-0.5 rounded-full border border-slate-700 text-center">
                     {" "}
-                    <div className="text-slate-400 text-base font-normal leading-normal">
+                    <h4 className=" text-slate-400">
                       {" "}
                       {repo.firstLanguage}
-                    </div>{" "}
+                    </h4>{" "}
                   </div>
                 ) : null}
               </div>
@@ -109,13 +132,23 @@ function Explore() {
           </div>
         ))}
       </div>
-      {repos.length > 9 && (
+      {repos.length > 8 && (
         <div className="flex justify-center">
           <button
             onClick={() => setShowMore(!showMore)}
-            className=" text-white text-lg font-medium leading-7 mt-4 px-4 py-2 rounded-lg border border-slate-700 "
+            className="px-4 py-2 mt-4 text-lg font-medium leading-7 text-white border rounded-lg border-slate-700 flex gap-x-2 hover:border-slate-300"
           >
-            {showMore ? "Show Less " : "Show More "}
+            <h5> {showMore ? "Show Less " : "Show More "}</h5>
+
+            <svg
+              className="mt-1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+              fill="#ACB1FF"
+            >
+              <path d="M3.4 81.7c-7.9 15.8-1.5 35 14.3 42.9L280.5 256 17.7 387.4C1.9 395.3-4.5 414.5 3.4 430.3s27.1 22.2 42.9 14.3l320-160c10.8-5.4 17.7-16.5 17.7-28.6s-6.8-23.2-17.7-28.6l-320-160c-15.8-7.9-35-1.5-42.9 14.3z" />
+            </svg>
           </button>
         </div>
       )}
