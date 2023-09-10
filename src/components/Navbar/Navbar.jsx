@@ -13,22 +13,27 @@ export default function Navbar() {
     {
       id: 0,
       header: "Home",
+      link:"/"
     },
     {
       id: 1,
       header: "Docs",
+      link:"/"
     },
     {
       id: 2,
       header: "Achievements",
+      link:"/"
     },
     {
       id: 3,
       header: "Projects",
+      link:"/"
     },
     {
       id: 4,
       header: "Team",
+      link:"/"
     },
   ];
   return (
@@ -44,7 +49,7 @@ export default function Navbar() {
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline-offset-8" href="/">
+                  <a className="hover:underline-offset-8" href={step.link}>
                     {step.header}
                   </a>
                 </li>
@@ -78,7 +83,7 @@ export default function Navbar() {
         {navLink.map((step) => (
           <div key={step} className="mt-0">
             <li className="">
-              <a href="/">{step.header}</a>
+              <a href={step.link}>{step.header}</a>
             </li>
           </div>
         ))}
