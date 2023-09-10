@@ -13,7 +13,7 @@ function Footer() {
             <div className="py-2 flex items-start gap-5">
               {data.map((item) => {
                 return item.imgData.map((value, i) => (
-                  <a key={i} href={value.link}>
+                  <a key={i} href={value.link} target="_blank">
                     <img src={value.img} alt="socials" />
                   </a>
                 ));
