@@ -39,12 +39,12 @@ export default function Navbar() {
       </div>
       {/* ----------full screen---------- */}
       <div className="flex">
-        <ul className="hidden lg:flex lg:gap-6 divide-y-reverse divide-inherit > * + * hover:divide-y-1 text-sm items-center">
+        <ul className="hidden lg:flex lg:gap-6 text-sm items-center">
           {navLink.map((step) => (
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline" href="/">
+                  <a className="hover:underline-offset-8" href="/">
                     {step.header}
                   </a>
                 </li>
