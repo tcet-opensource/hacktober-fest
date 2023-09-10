@@ -3,25 +3,24 @@ import faqData from "./faq-data";
 
 const FAQSection = () => {
   return (
-    <section className="px-8 font-inter py-5 lg:p-16">
-      <div className="flex flex-col gap-2 md:px-16 md:py-14 mx-auto lg:w-3/4">
-        <h1 className="text-white font-medium text-3xl">FAQ</h1>
-        {faqData.map(({ id, question, answer, isOpen }) => (
+    <section className="px-8 my-12 text-lg font-inter lg:p-16">
+      <div className="flex flex-col gap-2 mx-auto md:px-16 md:py-14 lg:w-3/4">
+        <h1 className="text-3xl font-medium text-white">FAQ</h1>
+        {faqData.map(({ id, question, answer }) => (
           <details
             key={id}
-            open={isOpen}
-            className="rounded-xl p-1 group border border-slate-800 bg-gradient-to-t from-slate-800 to-slate-900"
+            className="p-1 bg-gradient-to-tr rounded-xl border border-gray-800 cursor-pointer group from-slate-800 to-slate-900"
           >
-            <summary className="flex items-center gap-2 justify-between text-purple-300 p-3 px-6 text-sm">
+            <summary className="flex gap-2 justify-between items-center p-3 text-sm text-purple-300">
               {question}
               <img
                 src="./FAQSection/arrow.svg"
                 alt="down-arrow"
-                className="h-4 w-4 md:h-3 md:w-3 group-open:rotate-180"
+                className="w-4 h-4 group-open:rotate-180"
               />
             </summary>
-            <div className="p-4">
-              <p className="text-purple-200 box-content text-sm">{answer}</p>
+            <div className="px-3 mb-4">
+              <p className="box-content text-sm text-purple-200">{answer}</p>
             </div>
           </details>
         ))}
