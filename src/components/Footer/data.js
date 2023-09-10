@@ -3,27 +3,27 @@ const data = [
     imgData: [
       {
         img: "/Footer/linkedin.svg",
-        link: "https://www.linkedin.com/",
+        link: "https://www.linkedin.com/company/tcetopensource/",
       },
       {
         img: "/Footer/mail.svg",
-        link: "https://www.gmail.com/",
+        link: "mailto:opensource@tcetmumbai.in",
       },
       {
         img: "/Footer/youtube.svg",
-        link: "https://www.youtube.com/",
+        link: "https://www.youtube.com/@tcetopensource",
       },
       {
         img: "/Footer/twitter.svg",
-        link: "https://www.twitter.com/",
+        link: "https://www.twitter.com/tcetopensource",
       },
       {
         img: "/Footer/instagram.svg",
-        link: "https://www.instagram.com/",
+        link: "https://www.instagram.com/tcetopensource/",
       },
       {
         img: "/Footer/github.svg",
-        link: "https://www.github.com/",
+        link: "https://github.com/tcet-opensource",
       },
     ],
     linkData1: [
