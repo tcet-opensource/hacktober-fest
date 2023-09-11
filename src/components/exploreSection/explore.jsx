@@ -7,7 +7,7 @@ function Explore() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const token = "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";
+    const token = import.meta.env.VITE_GITHUB_TOKEN;
 
     const axiosInstance = axios.create({
       baseURL: "https://api.github.com",
