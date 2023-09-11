@@ -49,7 +49,7 @@ export default function Navbar() {
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline hover:text-white" href={step.link}>
+                  <a className="hover:text-white" href={step.link}>
                     {step.header}
                   </a>
                 </li>
@@ -58,14 +58,14 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="hidden md:ml-2 md:flex md:gap-2">
+      <div className="hidden md:ml-2 md:flex md:gap-2 text-white">
         <button className="px-4 py-2 text-lg border-2 border-gray-500 rounded-xl">
           <div className="flex gap-1.5">
             <img src={discord} alt="" />
             <a href="">Discord</a>
           </div>
         </button>
-        <button className="text-lg px-4 py-2 rounded-lg mt-0 bg-[#4C58FE] ">
+        <button className="text-lg px-4 py-2 rounded-lg mt-0 bg-[#4C58FE]">
           <a href="">Register Now</a>
         </button>
       </div>
