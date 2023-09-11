@@ -4,7 +4,7 @@ import faqData from "./faq-data";
 const FAQSection = () => {
   return (
     <section className="px-8 md:my-4 my-12 lg:p-16">
-      <div className="flex text-lg flex-col gap-2 mx-auto md:px-16 md:py-14 lg:w-3/4">
+      <div className="flex text-lg flex-col gap-3 mx-auto md:px-16 md:py-14 lg:w-3/4">
         <h1 className="text-3xl font-medium text-white font-spline">FAQ</h1>
         {faqData.map(({ id, question, answer }) => (
           <details
