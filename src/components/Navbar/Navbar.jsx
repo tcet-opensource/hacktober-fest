@@ -39,17 +39,17 @@ export default function Navbar() {
   return (
     <div className="px-6 pt-4 pb-2 flex justify-between text-[#AFAFAF]">
       <div className="flex items-center">
-        <img src={logo} className="h-8 w-8" alt="" />
+        <img src={logo} className="w-8 h-8" alt="" />
         <p className="text-lg font-medium text-white">TCET OpenSource</p>
       </div>
       {/* ----------full screen---------- */}
       <div className="flex">
-        <ul className="hidden md:visible lg:flex lg:gap-6 text-md items-center">
+        <ul className="items-center hidden md:flex md:gap-2 text-md">
           {navLink.map((step) => (
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline-offset-8 hover:text-white" href={step.link}>
+                  <a className="hover:underline hover:text-white" href={step.link}>
                     {step.header}
                   </a>
                 </li>
@@ -58,25 +58,25 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="hidden lg:flex lg:gap-2">
-        <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
+      <div className="hidden md:ml-2 md:flex md:gap-2">
+        <button className="px-4 py-2 text-lg border-2 border-gray-500 rounded-xl">
           <div className="flex gap-1.5">
             <img src={discord} alt="" />
             <a href="">Discord</a>
           </div>
         </button>
-        <button className="text-lg px-4 py-2 rounded-lg mt-0 bg-[#4C58FE] text-white font-medium">
+        <button className="text-lg px-4 py-2 rounded-lg mt-0 bg-[#4C58FE] ">
           <a href="">Register Now</a>
         </button>
       </div>
       {/* ----------tablet---------- */}
-      <div className="z-30 lg:hidden items-center" onClick={handleClick}>
-        <img className="h-8 w-8" src={toggle ? close1 : menu} alt="" />
+      <div className="z-30 items-center md:hidden" onClick={handleClick}>
+        <img className="w-8 h-8" src={toggle ? close1 : menu} alt="" />
       </div>
       <ul
         className={
           toggle
-            ? "navLinks absolute flex flex-col gap-4 text-md w-full px-8 mt-12 lg:hidden"
+            ? "navLinks absolute flex flex-col gap-4 text-md w-full px-8 mt-12 md:hidden"
             : "hidden"
         }
       >
