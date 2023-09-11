@@ -44,12 +44,12 @@ export default function Navbar() {
       </div>
       {/* ----------full screen---------- */}
       <div className="flex">
-        <ul className="hidden lg:flex lg:gap-6 text-md items-center">
+        <ul className="hidden md:flex md:gap-2 text-md items-center">
           {navLink.map((step) => (
             <div key={step}>
               <figure>
                 <li>
-                  <a className="hover:underline-offset-8 hover:text-white" href={step.link}>
+                  <a className="hover:underline hover:text-white" href={step.link}>
                     {step.header}
                   </a>
                 </li>
@@ -58,7 +58,7 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="hidden lg:flex lg:gap-2">
+      <div className="hidden md:ml-2 md:flex md:gap-2">
         <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
           <div className="flex gap-1.5">
             <img src={discord} alt="" />
@@ -70,13 +70,13 @@ export default function Navbar() {
         </button>
       </div>
       {/* ----------tablet---------- */}
-      <div className="z-30 lg:hidden items-center" onClick={handleClick}>
+      <div className="z-30 md:hidden items-center" onClick={handleClick}>
         <img className="h-8 w-8" src={toggle ? close1 : menu} alt="" />
       </div>
       <ul
         className={
           toggle
-            ? "navLinks absolute flex flex-col gap-4 text-md w-full px-8 mt-12 lg:hidden"
+            ? "navLinks absolute flex flex-col gap-4 text-md w-full px-8 mt-12 md:hidden"
             : "hidden"
         }
       >
