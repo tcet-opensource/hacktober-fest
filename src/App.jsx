@@ -1,9 +1,9 @@
-import React from "react";
-import Example from "./components/Example/Example";
+import FAQSection from "./components/FAQSection/FAQSection";
 function App() {
+  // do not add css in this file
   return (
-    <div className="">
-      <Example />
+    <div>
+      <FAQSection />
     </div>
   );
 }

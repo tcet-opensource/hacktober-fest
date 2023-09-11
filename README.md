@@ -12,7 +12,7 @@
 - Make a new branch of your assigned issue [1-Hero-Section]
 - Add code in that branch
 - Push code in your branch [1-Hero-Section]
-- Make PR for **staging branch** not in **main branch**
+- Make PR for **staging branch** not for **main branch**
 
 
 ## To Run on local
