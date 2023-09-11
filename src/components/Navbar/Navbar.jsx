@@ -37,7 +37,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <div className="px-6 pt-4 pb-2 flex justify-between text-[#AFAFAF]">
+    <div className="p-6 md:px-16 md:py-4 flex justify-between text-[#AFAFAF]">
       <div className="flex items-center">
         <img src={logo} className="w-8 h-8" alt="" />
         <p className="text-lg font-medium text-white">TCET OpenSource</p>
