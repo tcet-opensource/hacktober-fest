@@ -3,24 +3,28 @@ import faqData from "./faq-data";
 
 const FAQSection = () => {
   return (
-    <section className="px-8 my-12 text-lg font-inter lg:p-16">
-      <div className="flex flex-col gap-2 mx-auto md:px-16 md:py-14 lg:w-3/4">
+    <section className="px-8 md:my-4 my-12 font-inter lg:p-16">
+      <div className="flex text-lg flex-col gap-2 mx-auto md:px-16 md:py-14 lg:w-3/4">
         <h1 className="text-3xl font-medium text-white">FAQ</h1>
         {faqData.map(({ id, question, answer }) => (
           <details
             key={id}
-            className="p-1 bg-gradient-to-tr rounded-xl border border-gray-800 cursor-pointer group from-slate-800 to-slate-900"
+            className="rounded-xl cursor-pointer group border border-solid border-[#170F1E]"
+            style={{
+              background:
+                "linear-gradient(145deg, rgba(75, 72, 72, 0.30) 13.28%, rgba(187, 180, 180, 0.21) 87.52%)",
+            }}
           >
-            <summary className="flex gap-2 justify-between items-center p-3 text-sm text-purple-300">
+            <summary className="flex gap-2 justify-between items-center px-3 py-4 md:px-8 text-indigo-300">
               {question}
               <img
                 src="./FAQSection/arrow.svg"
                 alt="down-arrow"
-                className="w-4 h-4 group-open:rotate-180"
+                className="w-5 h-5 group-open:rotate-180"
               />
             </summary>
-            <div className="px-3 mb-4">
-              <p className="box-content text-sm text-purple-200">{answer}</p>
+            <div className="px-3 md:px-8 mb-4">
+              <p className="box-content text-[#AAACCD]">{answer}</p>
             </div>
           </details>
         ))}
