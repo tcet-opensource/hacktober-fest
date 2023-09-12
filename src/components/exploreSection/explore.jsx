@@ -1,81 +1,82 @@
 import { useEffect, useState } from "react";
-import { Octokit } from '@octokit/core';
+import { Octokit } from "@octokit/core";
 
-const token = import.meta.VITE_GITHUB_TOKEN
+const token = import.meta.VITE_GITHUB_TOKEN;
 
 function Explore() {
   const [repos, setRepos] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const org = 'tcet-opensource';
+        const org = "tcet-opensource";
         const octokit = new Octokit({
           auth: token,
-          baseUrl: 'https://api.github.com',
-          userAgent: 'Hacktober-Fest',
+          baseUrl: "https://api.github.com",
+          userAgent: "Hacktober-Fest",
           request: {
             headers: {
-              'accept': 'application/vnd.github.v3+json',
+              accept: "application/vnd.github.v3+json",
             },
           },
         });
-        const reposResponse = await octokit.request('GET /orgs/{org}/repos', {
+        const reposResponse = await octokit.request("GET /orgs/{org}/repos", {
           org,
         });
         const repositories = reposResponse.data;
-  
-        console.log('Fetched Repositories:', repositories);
-  
+
+        console.log("Fetched Repositories:", repositories);
+
         if (!repositories || repositories.length === 0) {
-          console.warn('No repositories fetched.');
-          setLoading(false);
+          console.warn("No repositories fetched.");
+
           return;
         }
-  
+
         const repositoriesWithDetails = await Promise.all(
           repositories.map(async (repo) => {
             try {
-             
-              const collaboratorsResponse = await octokit.request('GET /repos/{owner}/{repo}/collaborators', {
-                owner: org,
-                repo: repo.name,
-              });
+              const collaboratorsResponse = await octokit.request(
+                "GET /repos/{owner}/{repo}/collaborators",
+                {
+                  owner: org,
+                  repo: repo.name,
+                },
+              );
               const collaborators = collaboratorsResponse.data;
-  
-              console.log(collaborators)
-              const languagesResponse = await octokit.request('GET /repos/{owner}/{repo}/languages', {
-                owner: org,
-                repo: repo.name,
-              });
+
+              console.log(collaborators);
+              const languagesResponse = await octokit.request(
+                "GET /repos/{owner}/{repo}/languages",
+                {
+                  owner: org,
+                  repo: repo.name,
+                },
+              );
               const languages = languagesResponse.data;
-              console.log(languages)
+              console.log(languages);
               const firstLanguage = Object.keys(languages)[0] || null;
-  
+
               return { ...repo, collaborators, firstLanguage };
             } catch (error) {
               console.error(`Error fetching data for ${repo.name}:`, error);
               return { ...repo, collaborators: [], firstLanguage: null };
             }
-          })
+          }),
         );
-  
+
         setRepos(repositoriesWithDetails);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching data from GitHub API:", error);
         setError(error);
-        setLoading(false);
       }
     };
-  
+
     fetchData();
   }, []);
-  
 
   useEffect(() => {
     const handleResize = () => {
@@ -86,18 +87,6 @@ function Explore() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-
- 
 
   const displayedRepos = showMore
     ? windowWidth > 640
@@ -134,14 +123,12 @@ function Explore() {
             </div>
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center space-x-1 sm:space-x-2 text-base xl:text-lg font-normal leading-normal">
-                <img  
+                <img
                   src="/exploreSection/star.svg"
                   alt="Star Icon"
                   className="w-4 xl:w-6"
                 />
-                <span className="text-stone-300">
-                  {repo.stargazers_count}
-                </span>
+                <span className="text-stone-300">{repo.stargazers_count}</span>
 
                 {repo.firstLanguage ? (
                   <div className="px-2.5 py-0.5 rounded-full border border-slate-700 text-center">
