@@ -8,7 +8,7 @@ function SponsorSection() {
       <div className="relative px-6 py-9 md:p-16">
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12" key={index}>
-            <p className="text-[#E0E2FF] text-4xl font-medium mb-3 font-spline">
+            <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
               {data.head}
             </p>
             <p className="max-w-md mb-1.5">{data.subHead}</p>
