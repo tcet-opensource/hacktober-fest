@@ -1,54 +1,81 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { Octokit } from '@octokit/core';
+
+const token = import.meta.VITE_GITHUB_TOKEN
 
 function Explore() {
   const [repos, setRepos] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+ 
   useEffect(() => {
-    const token = import.meta.env.VITE_GITHUB_TOKEN;
-
-    const axiosInstance = axios.create({
-      baseURL: "https://api.github.com",
-      headers: {
-        Authorization: `token ${token}`,
-      },
-    });
-
-    axiosInstance
-      .get("/orgs/tcet-opensource/repos")
-      .then(async (response) => {
-        const repositories = response.data;
-        console.log(repositories);
+    const fetchData = async () => {
+      try {
+        const org = 'tcet-opensource';
+        const octokit = new Octokit({
+          auth: token,
+          baseUrl: 'https://api.github.com',
+          userAgent: 'Hacktober-Fest',
+          request: {
+            headers: {
+              'accept': 'application/vnd.github.v3+json',
+            },
+          },
+        });
+        const reposResponse = await octokit.request('GET /orgs/{org}/repos', {
+          org,
+        });
+        const repositories = reposResponse.data;
+  
+        console.log('Fetched Repositories:', repositories);
+  
+        if (!repositories || repositories.length === 0) {
+          console.warn('No repositories fetched.');
+          setLoading(false);
+          return;
+        }
+  
         const repositoriesWithDetails = await Promise.all(
           repositories.map(async (repo) => {
             try {
-              const collaboratorsResponse = await axiosInstance.get(
-                `/repos/tcet-opensource/${repo.name}/collaborators`,
-              );
+             
+              const collaboratorsResponse = await octokit.request('GET /repos/{owner}/{repo}/collaborators', {
+                owner: org,
+                repo: repo.name,
+              });
               const collaborators = collaboratorsResponse.data;
-              const languagesResponse = await axiosInstance.get(
-                `/repos/tcet-opensource/${repo.name}/languages`,
-              );
+  
+              console.log(collaborators)
+              const languagesResponse = await octokit.request('GET /repos/{owner}/{repo}/languages', {
+                owner: org,
+                repo: repo.name,
+              });
               const languages = languagesResponse.data;
-              console.log(languages);
+              console.log(languages)
               const firstLanguage = Object.keys(languages)[0] || null;
-
+  
               return { ...repo, collaborators, firstLanguage };
             } catch (error) {
               console.error(`Error fetching data for ${repo.name}:`, error);
               return { ...repo, collaborators: [], firstLanguage: null };
             }
-          }),
+          })
         );
-
+  
         setRepos(repositoriesWithDetails);
-      })
-      .catch((error) => {
+        setLoading(false);
+      } catch (error) {
         console.error("Error fetching data from GitHub API:", error);
-      });
+        setError(error);
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
   }, []);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,6 +86,18 @@ function Explore() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+
+ 
 
   const displayedRepos = showMore
     ? windowWidth > 640
