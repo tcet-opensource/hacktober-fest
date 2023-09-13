@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
+import reposData from "./data";
 
 const token = import.meta.VITE_GITHUB_TOKEN;
 
 function Explore() {
   const [repos, setRepos] = useState([]);
-  const [showMore, setShowMore] = useState(false);
+  const [displayedCount, setDisplayedCount] = useState(6);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [error, setError] = useState(null);
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,21 +25,24 @@ function Explore() {
             },
           },
         });
-        const reposResponse = await octokit.request("GET /orgs/{org}/repos", {
-          org,
-        });
-        const repositories = reposResponse.data;
 
-        console.log("Fetched Repositories:", repositories);
+        const repoNames = reposData.map((repo) => repo.name);
 
-        if (!repositories || repositories.length === 0) {
-          console.warn("No repositories fetched.");
+        const repositoriesToFetch = [];
 
-          return;
+        for (const repoName of repoNames) {
+          const repoResponse = await octokit.request(
+            "GET /repos/{owner}/{repo}",
+            {
+              owner: org,
+              repo: repoName,
+            },
+          );
+          repositoriesToFetch.push(repoResponse.data);
         }
 
         const repositoriesWithDetails = await Promise.all(
-          repositories.map(async (repo) => {
+          repositoriesToFetch.map(async (repo) => {
             try {
               const collaboratorsResponse = await octokit.request(
                 "GET /repos/{owner}/{repo}/collaborators",
@@ -48,7 +53,6 @@ function Explore() {
               );
               const collaborators = collaboratorsResponse.data;
 
-              console.log(collaborators);
               const languagesResponse = await octokit.request(
                 "GET /repos/{owner}/{repo}/languages",
                 {
@@ -57,7 +61,6 @@ function Explore() {
                 },
               );
               const languages = languagesResponse.data;
-              console.log(languages);
               const firstLanguage = Object.keys(languages)[0] || null;
 
               return { ...repo, collaborators, firstLanguage };
@@ -69,6 +72,7 @@ function Explore() {
         );
 
         setRepos(repositoriesWithDetails);
+        setIsDataFetched(true);
       } catch (error) {
         console.error("Error fetching data from GitHub API:", error);
         setError(error);
@@ -88,13 +92,21 @@ function Explore() {
     };
   }, []);
 
-  const displayedRepos = showMore
+  const handleShowMoreClick = () => {
+    if (displayedCount >= repos.length) {
+      setDisplayedCount(6);
+    } else {
+      setDisplayedCount(displayedCount + 3);
+    }
+  };
+
+  const displayedRepos = repos
     ? windowWidth > 640
-      ? repos.slice(0, 9)
-      : repos.slice(0, 9)
+      ? repos.slice(0, displayedCount)
+      : repos.slice(0, displayedCount - 3)
     : windowWidth < 640
-    ? repos.slice(0, 3)
-    : repos.slice(0, 6);
+    ? repos.slice(0, displayedCount)
+    : repos.slice(0, displayedCount);
 
   return (
     <div className="mx-6 my-9 sm:my-16 sm:mx-8 md:mx-16 xl:mx-32">
@@ -158,14 +170,15 @@ function Explore() {
           </div>
         ))}
       </div>
-      {repos.length > 8 && (
+      {isDataFetched && repos && (
         <div className="flex justify-center">
           <button
-            onClick={() => setShowMore(!showMore)}
+            onClick={handleShowMoreClick}
             className="px-4 py-2 mt-4 text-lg font-medium leading-7 text-white border rounded-lg border-slate-700 flex gap-x-2 hover:border-slate-300"
           >
-            <h5> {showMore ? "Show Less " : "Show More "}</h5>
-
+            <h5>
+              {displayedCount >= repos.length ? "Show Less" : "Show More"}
+            </h5>
             <svg
               className="mt-1.5"
               xmlns="http://www.w3.org/2000/svg"
