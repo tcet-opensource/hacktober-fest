@@ -1,8 +1,8 @@
-import Explore from "./components/exploreSection/explore";
+import HeroSection from "./components/HeroSection/HeroSection.jsx";
 function App() {
   return (
     <div className="">
-      <Explore />
+      <HeroSection />
     </div>
   );
 }
