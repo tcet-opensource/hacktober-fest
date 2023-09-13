@@ -9,3 +9,20 @@
 html {
     background-color: #0e0b23;
 }
+
+/* Global CSS file or your custom stylesheet */
+@layer utilities {
+    .bg-gradient-middle {
+      @apply bg-gradient-middle-style;
+    }
+  }
+  
+  @layer components {
+    .bg-gradient-middle-style {
+      background: linear-gradient(270deg, rgba(71, 81, 205, 0.00) 0%, #4751CD 51.9%, rgba(71, 81, 205, 0.00) 100%);
+      opacity: 0.6;
+      width: 1px;
+      height: 333px;
+    }
+  }
+  
