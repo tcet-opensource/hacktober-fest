@@ -21,4 +21,3 @@
 
 ## Deployment of Staging Branch
 https://staging-hacktober-fest.vercel.app/
-

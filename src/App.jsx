@@ -1,9 +1,11 @@
+
 import React from "react";
-import Example from "./components/Example/Example";
+import SponsorSection from "./components/SponsorSection/SponsorSection";
 function App() {
+  // do not add css in this file
   return (
-    <div className="">
-      <Example />
+    <div>
+      <SponsorSection />
     </div>
   );
 }
