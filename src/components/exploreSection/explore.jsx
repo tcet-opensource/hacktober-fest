@@ -113,6 +113,7 @@ function Explore() {
       <h2 className="my-6 text-3xl font-medium leading-10 text-indigo-100 sm:text-4xl">
         Explore Open-Source Repo
       </h2>
+      <img src="/exploreSection/Ellipse 23(1).svg" alt="" />
       <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
         {displayedRepos.map((repo) => (
           <div
