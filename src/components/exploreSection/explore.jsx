@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
 import reposData from "./data";
 
-const token = "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";
+const token = import.meta.VITE_GITHUB_TOKEN;
 
 function Explore() {
   const [repos, setRepos] = useState([]);
