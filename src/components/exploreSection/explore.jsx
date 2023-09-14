@@ -109,17 +109,17 @@ function Explore() {
     : repos.slice(0, displayedCount);
 
   return (
-    <div className="mx-6 my-9 sm:my-16 sm:mx-8 md:mx-16 xl:mx-32">
-      <h2 className="my-6 text-3xl font-medium leading-9 text-indigo-100 sm:text-4xl">
+    <div className="p-6 sm:p-16">
+      <h2 className="my-6 text-3xl font-medium leading-10 text-indigo-100 sm:text-4xl">
         Explore Open-Source Repo
       </h2>
-      <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
         {displayedRepos.map((repo) => (
           <div
             key={repo.id}
-            className="flex flex-col justify-between w-full gap-12 p-2 overflow-hidden border border-slate-700 rounded-2xl sm:p-4 item-between bg-gradient-explore"
+            className="flex flex-col justify-between w-full h-52 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between bg-gradient-explore"
           >
-            <div className="p-4">
+            <div className="p-3">
               <a
                 href={`https://github.com/tcet-opensource/${repo.name}`}
                 target="_blank"
