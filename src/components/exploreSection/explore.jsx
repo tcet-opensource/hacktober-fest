@@ -1,38 +1,66 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { Octokit } from "@octokit/core";
+import reposData from "./data";
+
+const token = import.meta.VITE_GITHUB_TOKEN;
 
 function Explore() {
   const [repos, setRepos] = useState([]);
-  const [showMore, setShowMore] = useState(false);
+  const [displayedCount, setDisplayedCount] = useState(6);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [error, setError] = useState(null);
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
-    const token = import.meta.env.VITE_GITHUB_TOKEN;
+    const fetchData = async () => {
+      try {
+        const org = "tcet-opensource";
+        const octokit = new Octokit({
+          auth: token,
+          baseUrl: "https://api.github.com",
+          userAgent: "Hacktober-Fest",
+          request: {
+            headers: {
+              accept: "application/vnd.github.v3+json",
+            },
+          },
+        });
 
-    const axiosInstance = axios.create({
-      baseURL: "https://api.github.com",
-      headers: {
-        Authorization: `token ${token}`,
-      },
-    });
+        const repoNames = reposData.map((repo) => repo.name);
 
-    axiosInstance
-      .get("/orgs/tcet-opensource/repos")
-      .then(async (response) => {
-        const repositories = response.data;
-        console.log(repositories);
+        const repositoriesToFetch = [];
+
+        for (const repoName of repoNames) {
+          const repoResponse = await octokit.request(
+            "GET /repos/{owner}/{repo}",
+            {
+              owner: org,
+              repo: repoName,
+            },
+          );
+          repositoriesToFetch.push(repoResponse.data);
+        }
+
         const repositoriesWithDetails = await Promise.all(
-          repositories.map(async (repo) => {
+          repositoriesToFetch.map(async (repo) => {
             try {
-              const collaboratorsResponse = await axiosInstance.get(
-                `/repos/tcet-opensource/${repo.name}/collaborators`,
+              const collaboratorsResponse = await octokit.request(
+                "GET /repos/{owner}/{repo}/collaborators",
+                {
+                  owner: org,
+                  repo: repo.name,
+                },
               );
               const collaborators = collaboratorsResponse.data;
-              const languagesResponse = await axiosInstance.get(
-                `/repos/tcet-opensource/${repo.name}/languages`,
+
+              const languagesResponse = await octokit.request(
+                "GET /repos/{owner}/{repo}/languages",
+                {
+                  owner: org,
+                  repo: repo.name,
+                },
               );
               const languages = languagesResponse.data;
-              console.log(languages);
               const firstLanguage = Object.keys(languages)[0] || null;
 
               return { ...repo, collaborators, firstLanguage };
@@ -44,10 +72,14 @@ function Explore() {
         );
 
         setRepos(repositoriesWithDetails);
-      })
-      .catch((error) => {
+        setIsDataFetched(true);
+      } catch (error) {
         console.error("Error fetching data from GitHub API:", error);
-      });
+        setError(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -60,26 +92,35 @@ function Explore() {
     };
   }, []);
 
-  const displayedRepos = showMore
+  const handleShowMoreClick = () => {
+    if (displayedCount >= repos.length) {
+      setDisplayedCount(6);
+    } else {
+      setDisplayedCount(displayedCount + 3);
+    }
+  };
+
+  const displayedRepos = repos
     ? windowWidth > 640
-      ? repos.slice(0, 9)
-      : repos.slice(0, 9)
+      ? repos.slice(0, displayedCount)
+      : repos.slice(0, displayedCount - 3)
     : windowWidth < 640
-    ? repos.slice(0, 3)
-    : repos.slice(0, 6);
+    ? repos.slice(0, displayedCount)
+    : repos.slice(0, displayedCount);
 
   return (
-    <div className="mx-6 my-9 sm:my-16 sm:mx-8 md:mx-16 xl:mx-32">
-      <h2 className="my-6 text-3xl font-medium leading-9 text-indigo-100 sm:text-4xl">
+    <div className="p-6 sm:p-16">
+      <h2 className="my-6 text-3xl font-medium leading-10 text-indigo-100 sm:text-4xl">
         Explore Open-Source Repo
       </h2>
-      <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+      <img src="/exploreSection/Ellipse 23(1).svg" alt="" />
+      <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
         {displayedRepos.map((repo) => (
           <div
             key={repo.id}
-            className="flex flex-col justify-between w-full gap-12 p-2 overflow-hidden border border-slate-700 rounded-2xl sm:p-4 item-between bg-gradient-explore"
+            className="flex flex-col justify-between w-full h-52 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between bg-gradient-explore"
           >
-            <div className="p-4">
+            <div className="p-3">
               <a
                 href={`https://github.com/tcet-opensource/${repo.name}`}
                 target="_blank"
@@ -95,14 +136,12 @@ function Explore() {
             </div>
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center space-x-1 sm:space-x-2 text-base xl:text-lg font-normal leading-normal">
-                <img  
+                <img
                   src="/exploreSection/star.svg"
                   alt="Star Icon"
                   className="w-4 xl:w-6"
                 />
-                <span className="text-stone-300">
-                  {repo.stargazers_count}
-                </span>
+                <span className="text-stone-300">{repo.stargazers_count}</span>
 
                 {repo.firstLanguage ? (
                   <div className="px-2.5 py-0.5 rounded-full border border-slate-700 text-center">
@@ -132,14 +171,15 @@ function Explore() {
           </div>
         ))}
       </div>
-      {repos.length > 8 && (
+      {isDataFetched && repos && (
         <div className="flex justify-center">
           <button
-            onClick={() => setShowMore(!showMore)}
+            onClick={handleShowMoreClick}
             className="px-4 py-2 mt-4 text-lg font-medium leading-7 text-white border rounded-lg border-slate-700 flex gap-x-2 hover:border-slate-300"
           >
-            <h5> {showMore ? "Show Less " : "Show More "}</h5>
-
+            <h5>
+              {displayedCount >= repos.length ? "Show Less" : "Show More"}
+            </h5>
             <svg
               className="mt-1.5"
               xmlns="http://www.w3.org/2000/svg"
