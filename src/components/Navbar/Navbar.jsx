@@ -7,87 +7,92 @@ import close1 from "/Navbar/close1.svg";
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
-  const handleClick = () => setToggle((p) => !p);
+  const handleClick = () => setToggle((prevToggle) => !prevToggle);
+
+  const closeMenu = () => setToggle(false);
 
   const navLink = [
     {
       id: 0,
       header: "Home",
-      link:"/"
+      link: "/",
     },
     {
       id: 1,
       header: "Docs",
-      link:"/"
+      link: "/",
     },
     {
       id: 2,
       header: "Achievements",
-      link:"/"
+      link: "/",
     },
     {
       id: 3,
       header: "Projects",
-      link:"/"
+      link: "/",
     },
     {
       id: 4,
       header: "Team",
-      link:"/"
+      link: "/",
     },
   ];
+
   return (
-    <div className="p-6 md:px-16 md:py-4 flex justify-between text-[#AFAFAF]">
+    <div className="relative px-6 pt-4 pb-2 flex justify-between text-[#AFAFAF]">
       <div className="flex items-center">
-        <img src={logo} className="w-8 h-8" alt="" />
+        <img src={logo} className="h-8 w-8" alt="" />
         <p className="text-lg font-medium text-white">TCET OpenSource</p>
       </div>
+
       {/* ----------full screen---------- */}
       <div className="flex">
-        <ul className="items-center hidden md:flex md:gap-2 text-md">
+        <ul className="hidden md:flex md:gap-2 text-md items-center">
           {navLink.map((step) => (
-            <div key={step}>
-              <figure>
-                <li>
-                  <a className="hover:text-white" href={step.link}>
-                    {step.header}
-                  </a>
-                </li>
-              </figure>
+            <div key={step.id}>
+              <li>
+                <a className="hover:underline hover:text-white" href={step.link}>
+                  {step.header}
+                </a>
+              </li>
             </div>
           ))}
         </ul>
       </div>
-      <div className="hidden md:ml-2 md:flex md:gap-2 text-white">
-        <button className="px-4 py-2 text-lg border-2 border-gray-500 rounded-xl">
+
+      <div className="hidden md:ml-2 md:flex md:gap-2">
+        <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
           <div className="flex gap-1.5">
             <img src={discord} alt="" />
-            <a href="">Discord</a>
+            <a href="#">Discord</a>
           </div>
         </button>
-        <button className="text-lg px-4 py-2 rounded-lg mt-0 bg-[#4C58FE]">
-          <a href="">Register Now</a>
+        <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
+          <a href="#">Register Now</a>
         </button>
       </div>
+
       {/* ----------tablet---------- */}
-      <div className="z-30 items-center md:hidden" onClick={handleClick}>
-        <img className="w-8 h-8" src={toggle ? close1 : menu} alt="" />
+      <div className="z-30 md:hidden items-center" onClick={handleClick}>
+        <img className="h-8 w-8" src={toggle ? close1 : menu} alt="" />
       </div>
-      <ul
-        className={
-          toggle
-            ? "navLinks absolute flex flex-col gap-4 text-md w-full px-8 mt-12 md:hidden"
-            : "hidden"
-        }
-      >
-        {navLink.map((step) => (
-          <div key={step} className="mt-0">
-            <li className="">
-              <a href={step.link}>{step.header}</a>
-            </li>
-          </div>
-        ))}
-      </ul>
+
+      {toggle && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center">
+          <ul className="navLinks absolute flex flex-col gap-4 text-md">
+            {navLink.map((step) => (
+              <div key={step.id} className="mt-0">
+                <li className="">
+                  <a href={step.link} onClick={closeMenu}>
+                    {step.header}
+                  </a>
+                </li>
+              </div>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

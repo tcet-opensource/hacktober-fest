@@ -3,9 +3,9 @@ import { SponArr, ImgArr } from "./data";
 import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
 function SponsorSection() {
   return (
-    <section className="relative ">
+    <section className=" ">
       <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
-      <div className="relative px-6 py-9 md:p-16">
+      <div className=" px-6 py-9 md:p-16">
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12" key={index}>
             <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
@@ -20,7 +20,7 @@ function SponsorSection() {
             >
               {data.email}
             </a>
-            <button className="text-white bg-[#4C58FE] py-2 px-4 flex mt-6 rounded-xl text-lg items-center justify-center gap-2 shadow-sponserShadow backdrop-blur-sm">
+            <button className="text-white bg-[#4C58FE] py-2 px-4 flex mt-6 rounded-xl text-lg items-center justify-center gap-2 shadow-sm">
               <img src={docLogo} />
               Sponsorship Prospectus
             </button>
