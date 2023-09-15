@@ -1,8 +1,8 @@
-// import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import FAQSection from "./components/FAQSection/FAQSection";
 import SponsorSection from "./components/SponsorSection/SponsorSection";
 import Explore from "./components/exploreSection/explore";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // do not add css in this file
@@ -12,6 +12,7 @@ function App() {
       <Explore />
       <SponsorSection />
       <FAQSection />
+      <Footer />
     </div>
   );
 }
