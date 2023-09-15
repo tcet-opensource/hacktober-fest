@@ -14,65 +14,78 @@ function Explore() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const org = "tcet-opensource";
-        const octokit = new Octokit({
-          auth: token,
-          baseUrl: "https://api.github.com",
-          userAgent: "Hacktober-Fest",
-          request: {
-            headers: {
-              accept: "application/vnd.github.v3+json",
+        const storedData = sessionStorage.getItem("githubData");
+
+        if (storedData) {
+          const parsedData = JSON.parse(storedData);
+          setRepos(parsedData);
+          setIsDataFetched(true);
+        } else {
+          const org = "tcet-opensource";
+          const octokit = new Octokit({
+            auth: token,
+            baseUrl: "https://api.github.com",
+            userAgent: "Hacktober-Fest",
+            request: {
+              headers: {
+                accept: "application/vnd.github.v3+json",
+              },
             },
-          },
-        });
+          });
 
-        const repoNames = reposData.map((repo) => repo.name);
+          const repoNames = reposData.map((repo) => repo.name);
 
-        const repositoriesToFetch = [];
+          const repositoriesToFetch = [];
 
-        for (const repoName of repoNames) {
-          const repoResponse = await octokit.request(
-            "GET /repos/{owner}/{repo}",
-            {
-              owner: org,
-              repo: repoName,
-            },
+          for (const repoName of repoNames) {
+            const repoResponse = await octokit.request(
+              "GET /repos/{owner}/{repo}",
+              {
+                owner: org,
+                repo: repoName,
+              },
+            );
+            repositoriesToFetch.push(repoResponse.data);
+          }
+
+          const repositoriesWithDetails = await Promise.all(
+            repositoriesToFetch.map(async (repo) => {
+              try {
+                const collaboratorsResponse = await octokit.request(
+                  "GET /repos/{owner}/{repo}/collaborators",
+                  {
+                    owner: org,
+                    repo: repo.name,
+                  },
+                );
+                const collaborators = collaboratorsResponse.data;
+
+                const languagesResponse = await octokit.request(
+                  "GET /repos/{owner}/{repo}/languages",
+                  {
+                    owner: org,
+                    repo: repo.name,
+                  },
+                );
+                const languages = languagesResponse.data;
+                const firstLanguage = Object.keys(languages)[0] || null;
+
+                return { ...repo, collaborators, firstLanguage };
+              } catch (error) {
+                console.error(`Error fetching data for ${repo.name}:`, error);
+                return { ...repo, collaborators: [], firstLanguage: null };
+              }
+            }),
           );
-          repositoriesToFetch.push(repoResponse.data);
+
+          sessionStorage.setItem(
+            "githubData",
+            JSON.stringify(repositoriesWithDetails),
+          );
+
+          setRepos(repositoriesWithDetails);
+          setIsDataFetched(true);
         }
-
-        const repositoriesWithDetails = await Promise.all(
-          repositoriesToFetch.map(async (repo) => {
-            try {
-              const collaboratorsResponse = await octokit.request(
-                "GET /repos/{owner}/{repo}/collaborators",
-                {
-                  owner: org,
-                  repo: repo.name,
-                },
-              );
-              const collaborators = collaboratorsResponse.data;
-
-              const languagesResponse = await octokit.request(
-                "GET /repos/{owner}/{repo}/languages",
-                {
-                  owner: org,
-                  repo: repo.name,
-                },
-              );
-              const languages = languagesResponse.data;
-              const firstLanguage = Object.keys(languages)[0] || null;
-
-              return { ...repo, collaborators, firstLanguage };
-            } catch (error) {
-              console.error(`Error fetching data for ${repo.name}:`, error);
-              return { ...repo, collaborators: [], firstLanguage: null };
-            }
-          }),
-        );
-
-        setRepos(repositoriesWithDetails);
-        setIsDataFetched(true);
       } catch (error) {
         console.error("Error fetching data from GitHub API:", error);
         setError(error);
@@ -105,20 +118,31 @@ function Explore() {
       ? repos.slice(0, displayedCount)
       : repos.slice(0, displayedCount - 3)
     : windowWidth < 640
-    ? repos.slice(0, displayedCount)
-    : repos.slice(0, displayedCount);
+      ? repos.slice(0, displayedCount)
+      : repos.slice(0, displayedCount);
 
   return (
-    <div className="p-6 sm:p-16">
+    <section className="p-6 sm:p-16">
       <h2 className="my-6 text-3xl font-medium leading-10 text-indigo-100 sm:text-4xl">
         Explore Open-Source Repo
       </h2>
-      <img src="/exploreSection/Ellipse 23(1).svg" alt="" />
-      <div className=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="relative">
+        <img
+          className="absolute w-full h-full -left-6 sm:-left-16"
+          src="/exploreSection/Ellipse23.svg"
+          alt=""
+        />
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
         {displayedRepos.map((repo) => (
           <div
             key={repo.id}
-            className="flex flex-col justify-between w-full h-52 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between bg-gradient-explore"
+            className="flex flex-col justify-between w-full h-52 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between"
+            style={{
+              background:
+                "linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)",
+            }}
           >
             <div className="p-3">
               <a
@@ -192,7 +216,7 @@ function Explore() {
           </button>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
