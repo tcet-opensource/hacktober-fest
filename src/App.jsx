@@ -1,9 +1,10 @@
-import React from "react";
-import Example from "./components/Example/Example";
+import React from 'react';
+import RegisterSection from './components/RegisterSection';
+
 function App() {
   return (
-    <div className="">
-      <Example />
+    <div>
+      <RegisterSection />
     </div>
   );
 }
