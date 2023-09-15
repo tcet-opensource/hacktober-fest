@@ -52,7 +52,6 @@ function Explore() {
                 },
               );
               const collaborators = collaboratorsResponse.data;
-
               const languagesResponse = await octokit.request(
                 "GET /repos/{owner}/{repo}/languages",
                 {
