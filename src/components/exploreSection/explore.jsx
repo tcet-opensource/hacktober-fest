@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
 import reposData from "./data";
 
-const token = import.meta.VITE_GITHUB_TOKEN;
+const token = "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"
 
 function Explore() {
   const [repos, setRepos] = useState([]);
@@ -170,7 +170,7 @@ function Explore() {
                 {repo.firstLanguage ? (
                   <div className="px-2.5 py-0.5 rounded-full border border-slate-700 text-center">
                     {" "}
-                    <h4 className=" text-slate-400">
+                    <h4 className="text-slate-400">
                       {" "}
                       {repo.firstLanguage}
                     </h4>{" "}
