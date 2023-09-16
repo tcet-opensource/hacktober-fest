@@ -19,7 +19,7 @@ function RegisterSection() {
         <div className="flex-grow md:w-1/3" />
 
         <div className="absolute bottom-0 items-center w-fit h-auto bg-blend-overlay bg-no-repeat" style={{ zIndex: -1 }}>
-          <img src="test.svg" alt="BG" />
+          <img src="/RegisterSection/register.svg" alt="BG" />
         </div>
       </div>
     </div>
