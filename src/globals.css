@@ -10,19 +10,23 @@ html {
     background-color: #0e0b23;
 }
 
-/* Global CSS file or your custom stylesheet */
-@layer utilities {
-    .bg-gradient-middle {
-      @apply bg-gradient-middle-style;
-    }
-  }
-  
-  @layer components {
-    .bg-gradient-middle-style {
-      background: linear-gradient(270deg, rgba(71, 81, 205, 0.00) 0%, #4751CD 51.9%, rgba(71, 81, 205, 0.00) 100%);
-      opacity: 0.6;
-      width: 1px;
-      height: 333px;
-    }
-  }
-  
+
+.button-bg {
+    background-color: rgb(76, 88, 254);
+}
+
+.spline-sans {
+    font-family: 'Spline Sans', sans-serif;
+}
+
+.title-color{
+    color:rgba(224, 226, 255, 1);
+}
+
+.bg-image{
+    background-image: url('/RegSec.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
