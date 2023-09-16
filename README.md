@@ -11,12 +11,8 @@
 ## GitHub Work Flow
 - Make a new branch of your assigned issue [1-Hero-Section]
 - Add code in that branch
-- Push code in your branch [1-Hero-Section]
-<<<<<<< HEAD
-- Make PR for **staging branch** not for **main branch**
-=======
-- Make PR for **staging branch** not in **main branch**
->>>>>>> e9983b377d1fc4ceb733b9da40894080f89eb9ff
+- Push code in **staging branch** not in **main branch**
+- Make a PR
 
 
 ## To Run on local
@@ -25,7 +21,3 @@
 
 ## Deployment of Staging Branch
 https://staging-hacktober-fest.vercel.app/
-<<<<<<< HEAD
-
-=======
->>>>>>> e9983b377d1fc4ceb733b9da40894080f89eb9ff
