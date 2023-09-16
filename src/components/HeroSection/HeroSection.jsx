@@ -14,7 +14,7 @@ function HeroSection() {
     <div>
       {contentArray.map((item, index) => (
         <body className="p-6 lg:p-16 overflow-hidden" key={index} >
-        <img src="/HeroSection/Ellipse.svg" className="absolute top-0 left-0 z-[-1] h-screen "/>
+        <img src="/HeroSection/Ellipse.svg" className="absolute top-0 left-0 z-[-1] h-screen opacity-40"/>
         <div className="flex flex-col items-center justify-between p-2 rounded-2xl border border-[#3C3C3C] md:flex-row relative  "
              style={{
                background: "rgba(255, 255, 255, 0.03)"
