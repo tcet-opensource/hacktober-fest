@@ -4,7 +4,7 @@ function App() {
   // do not add css in this file
   return (
     <div className="">
-      <Example />
+      {/*<Example />*/}
       <HeroSection/>
     </div>
   );
