@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'spline-sans': ['Spline Sans', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 ::-webkit-scrollbar {
     display:none;
@@ -9,24 +11,3 @@
 html {
     background-color: #0e0b23;
 }
-
-
-.button-bg {
-    background-color: rgb(76, 88, 254);
-}
-
-.spline-sans {
-    font-family: 'Spline Sans', sans-serif;
-}
-
-.title-color{
-    color:rgba(224, 226, 255, 1);
-}
-
-.bg-image{
-    background-image: url('/RegSec.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-

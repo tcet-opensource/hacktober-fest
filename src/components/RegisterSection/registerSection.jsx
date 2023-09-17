@@ -9,14 +9,14 @@ function RegisterSection() {
         backgroundRepeat: "none",
         backgroundPosition: "center"
       }}>
-            <h1 className="text-2xl sm:text-3xl  md:text-4xl xl:text-5xl font-semibold mb-2 text-center md:w-96 self-center spline-sans title-color mt-4 sm:mt-6 md:mt-8 xl:mt-16">
+            <h1 className="text-2xl sm:text-3xl  md:text-4xl xl:text-5xl font-semibold mb-2 text-center md:w-96 self-center font-spline-sans  text-purple-100 text-opacity-100 mt-4 sm:mt-6 md:mt-8 xl:mt-16">
               Find out about Hacktober Fest
             </h1>
             <p className="text-gray-300 text-xs sm:text-sm md:text-base xl:text-lg px-4 sm:px-8 md:px-24 lg:px-44 xl:px-64 self-center">
               Lorem ipsum dolor sit amet consectetur. Tellus dignissim amet
               ultricies lobortis nunc egestas amet id.
             </p>
-            <button className="button-bg text-white rounded-lg z-10 py-2 px-4 mt-4 sm:mt-6 md:mt-8 lg:mt-10 mx-auto block text-sm sm:text-base lg:text-lg">
+            <button className="bg-blue-600 text-white rounded-lg z-10 py-2 px-4 mt-4 sm:mt-6 md:mt-8 lg:mt-10 mx-auto block text-sm sm:text-base lg:text-lg">
               Register Now
             </button>
        

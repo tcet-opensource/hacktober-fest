@@ -1,4 +1,3 @@
-import React from 'react';
 import RegisterSection from './components/RegisterSection/registerSection.jsx';
 
 function App() {
