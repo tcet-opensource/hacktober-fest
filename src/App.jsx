@@ -5,6 +5,7 @@ import SponsorSection from "./components/SponsorSection/SponsorSection";
 import Explore from "./components/exploreSection/explore";
 import Footer from "./components/Footer/Footer";
 import React from "react";
+import RegisterSection from "./components/RegisterSection_doesnots/RegisterSection.jsx";
 
 function App() {
   // do not add css in this file
@@ -15,6 +16,7 @@ function App() {
       <Explore />
       <SponsorSection />
       <FAQSection />
+      <RegisterSection />
       <Footer />
       </div>
   )
