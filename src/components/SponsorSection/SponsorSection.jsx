@@ -11,7 +11,7 @@ function SponsorSection() {
             <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
               {data.head}
             </p>
-            <p className="max-w-md mb-1.5">{data.subHead}</p>
+            <p className="max-w-md mb-1.5 text-lg">{data.subHead}</p>
             <p className="inline">{data.contact}</p>
             <a
               className="text-[#ACB1FF]"
