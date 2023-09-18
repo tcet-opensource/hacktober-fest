@@ -20,7 +20,7 @@ function SponsorSection() {
             >
               {data.email}
             </a>
-            <button className="text-white bg-[#4C58FE] py-2 px-4 flex mt-6 rounded-xl text-lg items-center justify-center gap-2 shadow-sponserShadow backdrop-blur-sm">
+            <button className="text-white bg-[#4C58FE] py-2 px-4 flex mt-6 rounded-xl text-lg items-center justify-center gap-2 shadow-sm">
               <img src={docLogo} />
               Sponsorship Prospectus
             </button>

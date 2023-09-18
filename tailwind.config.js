@@ -6,13 +6,16 @@ export default {
       boxShadow: {
         sponserShadow:
           "0px 1px 2px 0px rgba(158, 165, 255, 0.7) inset, 0px -1px 2px 0px #454dc2 inset;",
-      backgroundImage: {
-        'gradient-explore': 'linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)',
       },
       fontFamily: {
         spline: ["Spline Sans", "sans-serif"],
+        backgroundImage: {
+          "gradient-explore":
+            "linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)",
+        },
       },
     },
   },
   plugins: [],
 };
+
