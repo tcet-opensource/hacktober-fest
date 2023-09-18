@@ -1,4 +1,3 @@
-import React from 'react';
 // import RegisterSection from './components/RegisterSection/registerSection.jsx';
 
 import RegisterSection from "./components/RegisterSection_doesnots/RegisterSection.jsx";
