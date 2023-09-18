@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    display:none;
+  display: none;
 }
 
 html {
-    background-color: #0e0b23;
+  background-color: #0e0b23;
 }
 
