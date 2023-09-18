@@ -4,7 +4,7 @@ import register from '../../../public/RegisterSection/register.svg'
 function RegisterSection() {
   return (
     <div className="p-6">
-    <div className="flex rounded-xl sm:px-8 md:px-16 justify-center items-center sm:m-4 sm:m-8 md:m-16"
+    <div className="flex rounded-xl sm:px-8 md:px-16 justify-center items-center sm:m-4 md:m-16"
          style={{
            "background": "rgba(255, 255, 255, 0.03)",
          }}
