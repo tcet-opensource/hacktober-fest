@@ -21,7 +21,7 @@ function RegisterSection() {
             <br />
             {"Tellus cringissim amet ultricies lobortis nunc egestas amet id."}
           </p>
-          <button className="bg-[#4C58FE] font-medium text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-md mt-4">
+          <button className="bg-[#4C58FE] font-medium text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-4">
             Register Now
           </button>
         </div>
