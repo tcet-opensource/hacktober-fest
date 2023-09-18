@@ -54,7 +54,7 @@ function HeroSection() {
           </div>
 
           <div className="w-full lg:w-1/2   ">
-           <img src="/HeroSection/Ellipse 24.png" className="fixed bottom-0 right-0 z-[-1] w-1/2 h-3/4 flex-shrink-0 "/>
+           <img src="/HeroSection/Ellipse 24.png" className="absolute bottom-0 right-0 z-[-1] w-1/2 h-3/4 flex-shrink-0 "/>
             <img src=" /HeroSection/Group 36.svg" className="max-w-full h-96 sm:h-auto relative z-10 scale-150 pr-14"  />
            
           </div>
