@@ -1,4 +1,4 @@
-import RegisterSection from './components/RegisterSection/registerSection.jsx';
+import RegisterSection from './components/RegisterSection/index.jsx';
 
 function App() {
   // do not add css in this file
