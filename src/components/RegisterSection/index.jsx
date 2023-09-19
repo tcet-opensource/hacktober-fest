@@ -2,7 +2,7 @@ export default function RegisterSection() {
     return (
         <div className="px-8 md:px-16">
             <div
-                className="relative bg-register h-[523px] md:h-[670px]  bg-no-repeat bg-center border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
+                className="relative bg-register h-[523px] md:h-[670px] bg-no-repeat bg-cover bg-center border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
                 style={{
                 background: "r255, 255, 0.03)",
                 }}
