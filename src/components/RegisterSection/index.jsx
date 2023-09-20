@@ -3,9 +3,9 @@ export default function RegisterSection() {
         <div className="px-8 md:px-16">
 
             <div
-                className="relative bg-register h-[calc(2*100vh/3)] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-20px)] bg-no-repeat bg-cover bg-center border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
+                className="relative h-[calc(2*100vh/3)] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-20px)] bg-no-repeat bg-cover bg-center border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
                 style={{
-                background: "255, 255, 0.03)",
+                    backgroundImage: "url('RegisterSection/register.svg')",
                 }}
             >
                 <div className="flex flex-col items-center justify-between mt-8 md:mt-16 [&>*]:text-[#E0E2FF]">
