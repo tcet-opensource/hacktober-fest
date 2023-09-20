@@ -3,7 +3,7 @@ export default function RegisterSection() {
         <div className="px-8 md:px-16">
 
             <div
-                className="relative h-[calc(2*100vh/3)] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-20px)] bg-no-repeat bg-cover bg-center border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
+                className="relative h-[calc(2*100vh/3)] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-20px)] bg-no-repeat bg-cover bg-center bg-[#15122a] border border-[#3C3C3C] rounded-2xl flex flex-col items-center overflow-hidden"
                 style={{
                     backgroundImage: "url('RegisterSection/register.svg')",
                 }}
@@ -14,7 +14,7 @@ export default function RegisterSection() {
                         <br />
                         Hacktober Fest
                     </h2>
-                    <p className="justify-center mt-3 px-2 text-center text-md sm:text-base md:text-xl">
+                    <p className="justify-center mt-3 px-4 text-center text-md sm:text-base md:text-xl">
                         Lorem ipsum dolor sit amet consectetur.
                         <br />
                         Tellus cringissim amet ultricies lobortis nunc egestas amet id.
