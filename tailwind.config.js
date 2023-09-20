@@ -4,16 +4,14 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        sponserShadow:
-          "0px 1px 2px 0px rgba(158, 165, 255, 0.7) inset, 0px -1px 2px 0px #454dc2 inset;",
+        "sponserShadow":  "0px 1px 2px 0px rgba(158, 165, 255, 0.7) inset, 0px -1px 2px 0px #454dc2 inset;",
       },
       fontFamily: {
-        spline: ["Spline Sans", "sans-serif"],
+        "spline": ["Spline Sans", "sans-serif"],
       },
       backgroundImage: {
         "register": "url('RegisterSection/register.svg')",
-        "gradient-explore":
-          "linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)",
+        "gradient-explore": "linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)",
       },
     },
   },
