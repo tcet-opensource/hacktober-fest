@@ -5,7 +5,7 @@ import infinity from "/SponsorSection/infinity.svg";
 
 const SponArr = [
   {
-    head: "Our Sponsors",
+    head: "Our Community Partners",
     subHead:
       "This event has been a success because of the initiatives by our respected sponsors who believed in us and made this event possible for everyone!",
     contact: "If you're interested in becoming a sponsor, contact us at ",

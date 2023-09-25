@@ -48,7 +48,7 @@ export default function Navbar() {
 
       {/* ----------full screen---------- */}
       <div className="flex">
-        <ul className="hidden md:flex md:gap-2 text-md items-center">
+        <ul className="hidden md:flex md:gap-2 text-md items-center text-lg">
           {navLink.map((step) => (
             <div key={step.id}>
               <li>
