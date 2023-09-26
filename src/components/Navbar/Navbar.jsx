@@ -72,7 +72,7 @@ export default function Navbar() {
             <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
               <div className="flex gap-1.5 text-white">
                 <img src={discord} alt="" />
-                <a href="https://discord.com/invite/r7ZhAREg2M">Discord</a>
+                <a href="https://discord.com/invite/r7ZhAREg2M" target="_blank">Discord</a>
               </div>
             </button>
             <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
@@ -106,6 +106,7 @@ export default function Navbar() {
                 key={step.id}
                 className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
                 href={step.link}
+                target="_blank"
                 onClick={closeMenu}
               >
                 {step.header}
