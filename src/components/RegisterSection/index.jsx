@@ -15,12 +15,12 @@ export default function RegisterSection() {
                         Hacktober Fest
                     </h2>
                     <p className="justify-center mt-3 px-4 text-center text-md sm:text-base md:text-xl">
-                        Lorem ipsum dolor sit amet consectetur.
+                      "Hacktoberfest: Code, collaborate, conquer!"
                         <br />
-                        Tellus cringissim amet ultricies lobortis nunc egestas amet id.
+                      Join us, make your mark, win rewards by contributing to open-source projects through GitHub pull requests.
                     </p>
-                    <button className="bg-[#4C58FE] font-medium text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-8">
-                        Register Now
+                    <button className="bg-[#4C58FE] font-bold text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-4">
+                        Find More
                     </button>
                 </div>
             </div>
