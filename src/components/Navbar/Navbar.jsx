@@ -42,10 +42,10 @@ export default function Navbar() {
   return (
     <div className="font-sans text-[#AFAFAF] mt-2">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 pl-4">
+        <div className="flex items-center justify-between h-16 px-2 sm:px-8">
           {/* Logo */}
-          <div className="flex items-center gap-3 rounded-full border-2 border-white border-opacity-25">
-            <img src={logo} alt="" className="h-[48px] p-1" />
+          <div className="flex items-center gap- rounded-2xl border border-white border-opacity-25">
+            <img src={logo} alt="" className="h-12" />
             <a href="/" className="text-white">
               <h2 className="text-white font-semibold text-base pr-2.5">
                 TCET OpenSource
