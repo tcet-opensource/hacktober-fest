@@ -40,57 +40,78 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="relative px-6 pt-4 pb-2 flex justify-between text-[#AFAFAF]">
-      <div className="flex items-center">
-        <img src={logo} className="h-8 w-8" alt="" />
-        <p className="text-lg font-medium text-white">TCET OpenSource</p>
-      </div>
-
-      {/* ----------full screen---------- */}
-      <div className="flex">
-        <ul className="hidden md:flex md:gap-2 text-md items-center text-lg">
-          {navLink.map((step) => (
-            <div key={step.id}>
-              <li>
-                <a className="hover:underline hover:text-white" href={step.link}>
+    <div className="font-sans text-[#AFAFAF] mt-2">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 px-2 sm:px-8">
+          {/* Logo */}
+          <div className="flex items-center gap- rounded-2xl border border-white border-opacity-25">
+            <img src={logo} alt="" className="h-12" />
+            <a href="/" className="text-white">
+              <h2 className="text-white font-semibold text-base pr-2.5">
+                TCET OpenSource
+              </h2>
+            </a>
+          </div>
+          {/* Navlinks */}
+          <div className="hidden md:flex">
+            <div className="text-base 2xl:text-lg ml-10 flex items-baseline space-x-2">
+              {navLink.map((step) => (
+                <a
+                  key={step.id}
+                  className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium"
+                  href={step.link}
+                >
                   {step.header}
                 </a>
-              </li>
+              ))}
             </div>
-          ))}
-        </ul>
-      </div>
-
-      <div className="hidden md:ml-2 md:flex md:gap-2">
-        <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
-          <div className="flex gap-1.5">
-            <img src={discord} alt="" />
-            <a href="#">Discord</a>
           </div>
-        </button>
-        <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
-          <a href="#">Register Now</a>
-        </button>
-      </div>
 
-      {/* ----------tablet---------- */}
-      <div className="z-30 md:hidden items-center" onClick={handleClick}>
-        <img className="h-8 w-8" src={toggle ? close1 : menu} alt="" />
-      </div>
-
-      {toggle && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center">
-          <ul className="navLinks absolute flex flex-col gap-4 text-md">
-            {navLink.map((step) => (
-              <div key={step.id} className="mt-0">
-                <li className="">
-                  <a href={step.link} onClick={closeMenu}>
-                    {step.header}
-                  </a>
-                </li>
+          <div className="hidden  md:flex gap-4 mt-2">
+            <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
+              <div className="flex gap-1.5 text-white">
+                <img src={discord} alt="" />
+                <a href="#">Discord</a>
               </div>
+            </button>
+            <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
+              <a href="#">Register Now</a>
+            </button>
+          </div>
+
+          {/* Hamburger */}
+          <div className="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              onClick={handleClick}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-white hover:ring-white focus:outline-none focus:ring-2 focus:rig-offset-2 focus:ring-offset-white focus:ring-white"
+            >
+              <span className="sr-only">Open main menu</span>
+              {toggle ? (
+                <img className="h-8 w-8" src={close1} alt="" />
+              ) : (
+                <img className="h-8 w-8" src={menu} alt="" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Mobile Nav */}
+      {toggle && (
+        <div className="flex flex-col md:hidden">
+          <div className="px-2 pt-1 pb-3 space-y-1 sm:px-3">
+            {navLink.map((step) => (
+              <a
+                key={step.id}
+                className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
+                href={step.link}
+                onClick={closeMenu}
+              >
+                {step.header}
+              </a>
             ))}
-          </ul>
+          
+          </div>
         </div>
       )}
     </div>
