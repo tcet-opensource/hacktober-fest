@@ -5,7 +5,9 @@ const contentArray = [
     id: 1,
     title: "Hacktoberfest TCET-OpenSource",
     description:
-      "TCET Open Source aims to streamline software engineering education and development into a single organization. Kindly star our repos, ...",
+      "Welcome to Hacktoberfest, the exhilarating month-long celebration of open source software! " +
+      "Whether you're a coding expert or just starting out, dive in this October to contribute, collaborate, and make a lasting impact. " +
+      "Together, we'll ignite the open source world. Welcome aboard!",
   },
 ];
 
@@ -24,7 +26,7 @@ function HeroSection() {
 
 
 
-            <h1 className="text-[#E0E2FF]  font-spline text-3xl font-semibold leading-normal mb-2 sm:tracking-wide lg:text-5xl "
+            <h1 className="text-[#E0E2FF] font-spline text-3xl font-semibold leading-normal mb-2 sm:tracking-wide lg:text-5xl "
                 style={{ lineHeight: '1.3' }}>
               {item.title.split(" ").slice(0, 1).join(" ")}
               <br />
@@ -32,7 +34,7 @@ function HeroSection() {
             </h1>
 
 
-            <p className="text-[#E0E2FF] w-4/5 lg:w-full description md:text-xl text-lg md:leading-8 md:tracking-wide">
+            <p className="text-[#E0E2FF] lg:w-full description md:text-xl text-md md:leading-8 md:tracking-wide sm:pr-10">
               {item.description}
             </p>
             <br/>
