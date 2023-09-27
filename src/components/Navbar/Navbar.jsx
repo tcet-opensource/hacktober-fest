@@ -20,22 +20,22 @@ export default function Navbar() {
     {
       id: 1,
       header: "Docs",
-      link: "/",
+      link: "https://opensource.tcetmumbai.in/docs/about-tcetopensource",
     },
     {
       id: 2,
       header: "Achievements",
-      link: "/",
+      link: "https://opensource.tcetmumbai.in/",
     },
     {
       id: 3,
       header: "Projects",
-      link: "/",
+      link: "https://opensource.tcetmumbai.in/docs/category/projects",
     },
     {
       id: 4,
       header: "Team",
-      link: "/",
+      link: "https://github.com/orgs/tcet-opensource/teams",
     },
   ];
 
@@ -60,6 +60,7 @@ export default function Navbar() {
                   key={step.id}
                   className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium"
                   href={step.link}
+                  target="_blank"
                 >
                   {step.header}
                 </a>
@@ -71,11 +72,11 @@ export default function Navbar() {
             <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
               <div className="flex gap-1.5 text-white">
                 <img src={discord} alt="" />
-                <a href="#">Discord</a>
+                <a href="https://discord.com/invite/r7ZhAREg2M" target="_blank">Discord</a>
               </div>
             </button>
             <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
-              <a href="#">Register Now</a>
+              <a href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai" target="_blank">Register Now</a>
             </button>
           </div>
 
@@ -105,6 +106,7 @@ export default function Navbar() {
                 key={step.id}
                 className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
                 href={step.link}
+                target="_blank"
                 onClick={closeMenu}
               >
                 {step.header}
