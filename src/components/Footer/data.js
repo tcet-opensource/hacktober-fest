@@ -33,23 +33,23 @@ const data = [
       },
       {
         title: "Docs",
-        link: "/",
+        link: "https://opensource.tcetmumbai.in/docs/about-tcetopensource",
       },
       {
         title: "About us",
-        link: "/",
+        link: "https://opensource.tcetmumbai.in/",
       },
       {
         title: "Blogs",
-        link: "/",
+        link: "https://opensource.tcetmumbai.in/blog",
       },
       {
         title: "Contact",
-        link: "/",
+        link: "mailto:opensource@tcetmumbai.in",
       },
       {
         title: "Projects",
-        link: "/",
+        link: "https://github.com/tcet-opensource",
       },
     ],
     addressData: [
