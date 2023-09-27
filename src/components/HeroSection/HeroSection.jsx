@@ -39,14 +39,18 @@ function HeroSection() {
 
             <div className="flex flex-row gap-3">
 
+              <a href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai" target="_blank" className="z-20">
               <button className="flex items-center justify-center p-2 button-one rounded-xl button-one bg-[#4C58FE] shadow-lg text-white text-lg font-semibold ">
                 Register Now
               </button>
-
+              </a>
+               
+              <a href="https://opensource.tcetmumbai.in/" target="_blank" className="z-20">
               <button className="flex p-2 justify-center items-center rounded-xl border-2 border-[#3C3E5F] text-white text-lg font-medium">
                 About Us
                 <img src="/HeroSection/chevron-right.svg" className="gap-y-2 "/>
               </button> 
+              </a>
 
               <img src="/HeroSection/Line 6.png" className=" absolute hidden lg:block -bottom-10 left-1/2 transform -translate-y-1/2 z-[-1] w-1 h-[333px] opacity-60"/>
 
