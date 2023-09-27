@@ -16,9 +16,14 @@ export default function RegisterSection() {
           <p className="justify-center mt-3 px-4 text-center text-md sm:text-base md:text-xl">
             "Hacktoberfest: Code, collaborate, conquer!"
             <br />
-            Join us, make your mark, win rewards by contributing to open-source projects through GitHub pull requests.
+            Join us, make your mark, win rewards by contributing to open-source
+            projects through GitHub pull requests.
           </p>
-          <a href="https://hacktoberfest.com/participation/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://hacktoberfest.com/participation/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="bg-[#4C58FE] font-bold text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-4">
               Find More
             </button>
