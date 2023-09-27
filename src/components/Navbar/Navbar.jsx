@@ -35,7 +35,7 @@ export default function Navbar() {
     {
       id: 4,
       header: "Team",
-      link: "https://github.com/tcet-opensource",
+      link: "https://github.com/orgs/tcet-opensource/teams",
     },
   ];
 
