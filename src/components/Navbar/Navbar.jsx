@@ -38,13 +38,6 @@ export default function Navbar() {
   const handleClick = () => setToggle((prevToggle) => !prevToggle);
   const closeMenu = () => setToggle(false);
 
-  const handleScroll = () => {
-    const section = document.getElementById("sponserSection");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="font-sans text-[#451c1c] mt-2">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,13 +66,6 @@ export default function Navbar() {
                   {step.header}
                 </a>
               ))}
-
-              <a
-                onClick={handleScroll}
-                className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium cursor-pointer"
-              >
-                Partners
-              </a>
             </div>
           </div>
 
@@ -140,13 +126,6 @@ export default function Navbar() {
                 {step.header}
               </a>
             ))}
-
-            <a
-              onClick={handleScroll}
-              className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Partners
-            </a>
           </div>
         </div>
       )}
