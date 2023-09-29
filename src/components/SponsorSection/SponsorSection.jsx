@@ -3,7 +3,7 @@ import { SponArr, ImgArr } from "./data";
 import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
 function SponsorSection() {
   return (
-    <section className="">
+    <section id="sponserSection" className="">
       <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
       <div className="px-6 py-9 md:p-16">
         {SponArr.map((data, index) => (
@@ -11,12 +11,14 @@ function SponsorSection() {
             <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
               {data.head}
             </p>
+
             <p className="max-w-md mb-1.5 text-lg">{data.subHead}</p>
             <p className="inline">{data.contact}</p>
             <a
               className="text-[#ACB1FF]"
               href="mailto:opensource@tcetmumbai.in"
               target="_blank"
+              rel="noreferrer"
             >
               {data.email}
             </a>
@@ -26,6 +28,7 @@ function SponsorSection() {
             </button>
           </div>
         ))}
+        
         <div className="flex flex-wrap justify-around gap-5">
           {ImgArr.map((image, index) => (
             <div
@@ -48,3 +51,4 @@ function SponsorSection() {
 }
 
 export default SponsorSection;
+

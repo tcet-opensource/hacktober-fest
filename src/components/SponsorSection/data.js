@@ -1,34 +1,71 @@
-import vw from "/SponsorSection/vw.svg";
-import bit from "/SponsorSection/bit.svg";
-import tesla from "/SponsorSection/tesla.svg";
-import infinity from "/SponsorSection/infinity.svg";
+import owasp from "/SponsorSection/OWASP.png";
+import foss from "/SponsorSection/FOSS.png";
+import rctcet from "/SponsorSection/RCTCET.png";
+import iei from "/SponsorSection/IEI.png";
+import iete from "/SponsorSection/IETE.png";
+import acm from "/SponsorSection/ACM.png";
+import sort from "/SponsorSection/SORT.png";
+import asce from "/SponsorSection/ASCE.png";
+// import CloudSection from "./CloudSection.jsx";
+
 
 const SponArr = [
   {
-    head: "Our Community Partners",
-    subHead:
-      "This event has been a success because of the initiatives by our respected sponsors who believed in us and made this event possible for everyone!",
-    contact: "If you're interested in becoming a sponsor, contact us at ",
-    email: "opensource@tcetmumbai.in",
+    community: "Our Community Partners",
+    collab : "Our Collaborators",
+    cloud: "Our Cloud Partner",
+    sponsors: "Our Sponsors",
+    special: "Our Special Partners",
+
   },
 ];
-const ImgArr = [
+const CollabArr = [
   {
-    img: bit,
-    text: "Company Name",
+    img: foss,
+    text: "FOSS",
   },
   {
-    img: infinity,
-    text: "Company Name",
-  },
-  {
-    img: tesla,
-    text: "Company Name",
-  },
-  {
-    img: vw,
-    text: "Company Name",
+    img: rctcet,
+    text: "Rotaract of TCET",
   },
 ];
 
-export { SponArr, ImgArr };
+
+const CommunityArr = [
+  {
+    img: owasp,
+    text: "OWASP",
+  },
+  {
+    img: iete,
+    text: "IETE",
+  },
+  {
+    img: sort,
+    text: "SORT",
+  },
+  {
+    img: iei,
+    text: "IEI",
+  },
+  {
+    img: acm,
+    text: "ACM",
+  },
+  {
+    img: asce,
+    text: "ASCE",
+  },
+];
+
+const SpecialArr = [
+];
+
+const SpoArr = [
+];
+
+const CloudArr = [
+
+];
+
+export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr };
