@@ -13,7 +13,8 @@ function CommunitySection() {
             </p>
           </div>
         ))}
-        <div className="flex flex-wrap justify-around gap-5">
+        <div className="grid gap-5 grid-cols-2 md:grid-cols-4">
+        {/* <div className="flex flex-wrap justify-around gap-20 md:gap-64"> */}
           {CommunityArr.map((image, index) => (
             <div
               className="flex flex-col items-center justify-evenly"
