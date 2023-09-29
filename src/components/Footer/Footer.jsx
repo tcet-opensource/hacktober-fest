@@ -7,14 +7,18 @@ function Footer() {
         <div className="flex flex-col gap-12 items-start">
           <img src="/Footer/logo.svg" alt="logo" />
           <div className="flex flex-col justify-center items-start">
-            <p className="text-[#ACB1FF] text-xl font-normal ">
+            <p className="text-[#ACB1FF] text-xl font-normal">
               Join us - get social!
             </p>
-            <div className="py-2 flex items-start gap-5">
+            <div className="py-2 flex items-start gap-5 social-icons">
               {data.map((item) => {
                 return item.imgData.map((value, i) => (
                   <a key={i} href={value.link} target="_blank">
-                    <img src={value.img} alt="socials" />
+                    <img
+                      src={value.img}
+                      alt="socials"
+                      className="hover:scale-125 transition duration-300 ease-in-out"
+                    />
                   </a>
                 ));
               })}
