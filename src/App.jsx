@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection.jsx";
 import FAQSection from "./components/FAQSection/FAQSection";
-import SponsorSection from "./components/SponsorSection/SponsorSection";
+// import Sponsors from "./pages/SponsorSection/Sponsors.jsx";
 import Explore from "./components/exploreSection/explore";
 import Footer from "./components/Footer/Footer";
 import RegisterSection from './components/RegisterSection/index.jsx';
@@ -13,7 +13,7 @@ function App() {
         <Navbar />
         <HeroSection />
         <Explore />
-        <SponsorSection />
+        {/*<Sponsors />*/}
         <FAQSection />
         <RegisterSection />
         <Footer />
