@@ -3,6 +3,7 @@ import logo from "/Navbar/logo.png";
 import menu from "/Navbar/menu.svg";
 import discord from "/Navbar/discord.svg";
 import close1 from "/Navbar/close1.svg";
+import { NavLink } from "react-router-dom";
 
 const navLink = [
   {
@@ -73,13 +74,14 @@ export default function Navbar() {
                   {step.header}
                 </a>
               ))}
-
-              <a
-                onClick={handleScroll}
-                className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium cursor-pointer"
-              >
-                Partners
-              </a>
+              <NavLink to="/sponsors">
+                <a
+                  onClick={handleScroll}
+                  className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium cursor-pointer"
+                >
+                  Sponsors
+                </a>
+              </NavLink>
             </div>
           </div>
 
