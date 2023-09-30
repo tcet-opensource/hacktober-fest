@@ -14,6 +14,7 @@ import genosisx from "/PartnersSection/GENOSISX.jpeg";
 import mindbenders from "/PartnersSection/MINDBENDERS.png";
 import iste from "/PartnersSection/ISTE.png";
 import acmsigai from "/PartnersSection/ACMSIGAI.png"
+import gfg from "/PartnersSection/GFGTCET.jpg";
 // import CloudSection from "./CloudSection.jsx";
 
 
@@ -55,7 +56,7 @@ const CommunityArr = [
     img: iste,
     link: "https://iste.tcetmumbai.in/",
     text: "ISTE",
-    width: 230,
+    width: 240,
     height: 120,
   },
   {
@@ -69,6 +70,12 @@ const CommunityArr = [
     img: iete,
     link: "https://iete.tcetmumbai.in/",
     text: "IETE",
+    width: 160,
+    height: 120,
+  },
+  {
+    img: gfg,
+    text: "GFG TCET",
     width: 160,
     height: 120,
   },
