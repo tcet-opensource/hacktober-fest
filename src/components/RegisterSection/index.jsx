@@ -24,7 +24,7 @@ export default function RegisterSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-[#4C58FE] font-bold text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-4">
+            <button className="bg-[#4C58FE] font-bold text-white px-3 sm:px-3 md:px-4 py-2 sm:py-1.5 md:py-2 rounded-md mt-4 hover:bg-[#3442D4] transition duration-300 ease-in-out">
               Find More
             </button>
           </a>
