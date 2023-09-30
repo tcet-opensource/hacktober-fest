@@ -138,7 +138,7 @@ function Explore() {
         {displayedRepos.map((repo) => (
           <div
             key={repo.id}
-            className="flex flex-col justify-between w-full h-52 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between"
+            className="flex flex-col justify-between w-full h-48 gap-6 overflow-hidden border border-b-2 border-[#3C3E5F] rounded-2xl sm:p-2 item-between"
             style={{
               background:
                 "linear-gradient(108deg, #161136 5.21%, #0e0b23 98.76%)",
@@ -150,7 +150,7 @@ function Explore() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <h1 className="self-stretch text-xl xl:text-2xl font-semibold leading-8 text-violet-200 hover:underline">
+                <h1 className="self-stretch text-xl xl:text-2xl font-semibold leading-8 text-violet-200 hover:underline items-center flex">
                   {repo.name}
                 </h1>
               </a>
