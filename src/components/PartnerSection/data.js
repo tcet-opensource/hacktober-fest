@@ -21,7 +21,7 @@ import gfg from "/PartnersSection/GFGTCET.jpg";
 const SponArr = [
   {
     community: "Community Partners",
-    collab : "Collaborators",
+    collab : "Collaboration Partners",
     cloud: "Cloud Partner",
     sponsors: "Sponsors",
     special: "Special Partners",
