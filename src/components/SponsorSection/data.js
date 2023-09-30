@@ -2,7 +2,12 @@ import owasp from "/SponsorSection/OWASP.png";
 import foss from "/SponsorSection/FOSS.png";
 import rctcet from "/SponsorSection/RCTCET.png";
 import iei from "/SponsorSection/IEI.png";
+import iete from "/SponsorSection/IETE.png";
+import acm from "/SponsorSection/ACM.png";
+import sort from "/SponsorSection/SORT.png";
+import asce from "/SponsorSection/ASCE.png";
 // import CloudSection from "./CloudSection.jsx";
+
 
 const SponArr = [
   {
@@ -16,20 +21,12 @@ const SponArr = [
 ];
 const CollabArr = [
   {
-    img: owasp,
-    text: "OWASP",
-  },
-  {
     img: foss,
     text: "FOSS",
   },
   {
     img: rctcet,
     text: "Rotaract of TCET",
-  },
-  {
-    img: iei,
-    text: "IEI",
   },
 ];
 
@@ -40,74 +37,35 @@ const CommunityArr = [
     text: "OWASP",
   },
   {
-    img: foss,
-    text: "FOSS",
+    img: iete,
+    text: "IETE",
   },
   {
-    img: rctcet,
-    text: "Rotaract of TCET",
+    img: sort,
+    text: "SORT",
   },
   {
     img: iei,
     text: "IEI",
+  },
+  {
+    img: acm,
+    text: "ACM",
+  },
+  {
+    img: asce,
+    text: "ASCE",
   },
 ];
 
 const SpecialArr = [
-  {
-    img: owasp,
-    text: "OWASP",
-  },
-  {
-    img: foss,
-    text: "FOSS",
-  },
-  {
-    img: rctcet,
-    text: "Rotaract of TCET",
-  },
-  {
-    img: iei,
-    text: "IEI",
-  },
 ];
 
 const SpoArr = [
-  {
-    img: owasp,
-    text: "OWASP",
-  },
-  {
-    img: foss,
-    text: "FOSS",
-  },
-  {
-    img: rctcet,
-    text: "Rotaract of TCET",
-  },
-  {
-    img: iei,
-    text: "IEI",
-  },
 ];
 
 const CloudArr = [
-  {
-    img: owasp,
-    text: "OWASP",
-  },
-  {
-    img: foss,
-    text: "FOSS",
-  },
-  {
-    img: rctcet,
-    text: "Rotaract of TCET",
-  },
-  {
-    img: iei,
-    text: "IEI",
-  },
+
 ];
 
 export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr };
