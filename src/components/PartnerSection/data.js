@@ -56,7 +56,7 @@ const CommunityArr = [
     img: iste,
     link: "https://iste.tcetmumbai.in/",
     text: "ISTE",
-    width: 240,
+    width: 160,
     height: 120,
   },
   {
@@ -83,7 +83,7 @@ const CommunityArr = [
     img: asce,
     link: "https://ascetcet.github.io/index.html",
     text: "ASCE",
-    width: 170,
+    width: 160,
     height: 120,
   },
   {
@@ -103,13 +103,13 @@ const CommunityArr = [
   {
     img: iei,
     text: "IEI",
-    width: 140,
+    width: 160,
     height: 120,
   },
   {
     img: acmsigai,
     text: "ACM-SigAI",
-    width: 140,
+    width: 160,
     height: 120,
   },
 ];
