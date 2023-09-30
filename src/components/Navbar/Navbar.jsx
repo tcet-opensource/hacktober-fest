@@ -74,12 +74,12 @@ export default function Navbar() {
                   {step.header}
                 </a>
               ))}
-              <NavLink to="/sponsors">
+              <NavLink to="/partners">
                 <a
                   onClick={handleScroll}
                   className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium cursor-pointer"
                 >
-                  Sponsors
+                  Partners
                 </a>
               </NavLink>
             </div>
@@ -143,12 +143,14 @@ export default function Navbar() {
               </a>
             ))}
 
-            <a
-              onClick={handleScroll}
-              className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Partners
-            </a>
+            <NavLink to="/partners">
+                <a
+                  onClick={handleScroll}
+                  className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Partners
+                </a>
+              </NavLink>
           </div>
         </div>
       )}
