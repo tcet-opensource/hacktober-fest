@@ -4,7 +4,6 @@ import menu from "/Navbar/menu.svg";
 import discord from "/Navbar/discord.svg";
 import close1 from "/Navbar/close1.svg";
 import { NavLink } from "react-router-dom";
-import partners from "/src/pages/Partners.jsx";
 
 const navLink = [
   {

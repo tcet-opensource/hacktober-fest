@@ -13,6 +13,7 @@ import alg from "/PartnersSection/ALG.png";
 import genosisx from "/PartnersSection/GENOSISX.jpeg";
 import mindbenders from "/PartnersSection/MINDBENDERS.png";
 import iste from "/PartnersSection/ISTE.png";
+import acmsigai from "/PartnersSection/ACMSIGAI.png"
 // import CloudSection from "./CloudSection.jsx";
 
 
@@ -95,6 +96,12 @@ const CommunityArr = [
   {
     img: iei,
     text: "IEI",
+    width: 140,
+    height: 120,
+  },
+  {
+    img: acmsigai,
+    text: "ACM-SigAI",
     width: 140,
     height: 120,
   },
