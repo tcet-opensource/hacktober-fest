@@ -2,7 +2,7 @@ import data from "./data";
 
 function Footer() {
   return (
-    <div className="pt-16 pb-12 text-white flex flex-col items-center gap-9">
+    <div className="pt-16 text-white flex flex-col items-center gap-9">
       <div className="sm:px-16 px-8 w-full flex md:flex-row flex-col gap-9 justify-between">
         <div className="flex flex-col gap-12 items-start">
           <img src="/Footer/logo.svg" alt="logo" />

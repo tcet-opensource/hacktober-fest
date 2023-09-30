@@ -14,13 +14,14 @@ import genosisx from "/PartnersSection/GENOSISX.jpeg";
 import mindbenders from "/PartnersSection/MINDBENDERS.png";
 import iste from "/PartnersSection/ISTE.png";
 import acmsigai from "/PartnersSection/ACMSIGAI.png"
+import gfg from "/PartnersSection/GFGTCET.jpg";
 // import CloudSection from "./CloudSection.jsx";
 
 
 const SponArr = [
   {
     community: "Community Partners",
-    collab : "Collaborators",
+    collab : "Collaboration Partners",
     cloud: "Cloud Partner",
     sponsors: "Sponsors",
     special: "Special Partners",
@@ -55,7 +56,7 @@ const CommunityArr = [
     img: iste,
     link: "https://iste.tcetmumbai.in/",
     text: "ISTE",
-    width: 230,
+    width: 160,
     height: 120,
   },
   {
@@ -73,10 +74,16 @@ const CommunityArr = [
     height: 120,
   },
   {
+    img: gfg,
+    text: "GFG TCET",
+    width: 160,
+    height: 120,
+  },
+  {
     img: asce,
     link: "https://ascetcet.github.io/index.html",
     text: "ASCE",
-    width: 170,
+    width: 160,
     height: 120,
   },
   {
@@ -96,13 +103,13 @@ const CommunityArr = [
   {
     img: iei,
     text: "IEI",
-    width: 140,
+    width: 160,
     height: 120,
   },
   {
     img: acmsigai,
     text: "ACM-SigAI",
-    width: 140,
+    width: 160,
     height: 120,
   },
 ];
