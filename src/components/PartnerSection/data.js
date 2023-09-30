@@ -115,20 +115,20 @@ const SpecialArr = [
     width: 140,
     height: 120,
   },
-  {
-    img: mindsdb,
-    link: "https://mindsdb.com/",
-    text: "MindsDB",
-    width: 220,
-    height: 120,
-  },
-  {
-    img: hacksquad,
-    link: "https://www.hacksquad.dev/",
-    text: "HackSquad",
-    width: 160,
-    height: 100,
-  },
+  // {
+  //   img: mindsdb,
+  //   link: "https://mindsdb.com/",
+  //   text: "MindsDB",
+  //   width: 220,
+  //   height: 120,
+  // },
+  // {
+  //   img: hacksquad,
+  //   link: "https://www.hacksquad.dev/",
+  //   text: "HackSquad",
+  //   width: 160,
+  //   height: 100,
+  // },
 ];
 
 const SpoArr = [

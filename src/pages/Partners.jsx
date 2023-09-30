@@ -9,7 +9,7 @@ function Partners() {
       <SponsoredBy />
       <CollabSection />
       <SpecialSection />
-      <CloudSection />
+      {/* <CloudSection /> */}
       <CommunitySection />
     </section>
   );
