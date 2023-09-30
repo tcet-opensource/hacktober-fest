@@ -6,66 +6,142 @@ import iete from "/SponsorSection/IETE.png";
 import acm from "/SponsorSection/ACM.png";
 import sort from "/SponsorSection/SORT.png";
 import asce from "/SponsorSection/ASCE.png";
+import vultr from "/SponsorSection/VULTR.png";
+import mindsdb from "/SponsorSection/MINDSDB.jpg";
+import hacksquad from "/SponsorSection/HACKSQUAD.png";
+import alg from "/SponsorSection/ALG.png";
+import genosisx from "/SponsorSection/GENOSISX.jpeg";
+import mindbenders from "/SponsorSection/MINDBENDERS.png";
+import iste from "/SponsorSection/ISTE.png";
 // import CloudSection from "./CloudSection.jsx";
 
 
 const SponArr = [
   {
-    community: "Our Community Partners",
-    collab : "Our Collaborators",
-    cloud: "Our Cloud Partner",
-    sponsors: "Our Sponsors",
-    special: "Our Special Partners",
+    community: "Community Partners",
+    collab : "Collaborators",
+    cloud: "Cloud Partner",
+    sponsors: "Sponsors",
+    special: "Special Partners",
 
   },
 ];
 const CollabArr = [
   {
     img: foss,
-    text: "FOSS",
+    text: "FOSS Club of TCET",
+    width: 350,
+    height: 120,
   },
   {
     img: rctcet,
-    text: "Rotaract of TCET",
+    link: "https://www.rc.tcetmumbai.in/",
+    text: "Rotaract Club of TCET",
+    width: 160,
+    height: 120,
   },
 ];
 
-
 const CommunityArr = [
   {
-    img: owasp,
-    text: "OWASP",
+    img: sort,
+    link: "https://sort.tcetmumbai.in/",
+    text: "SORT",
+    width: 160,
+    height: 120,
+  },
+  {
+    img: iste,
+    link: "https://iste.tcetmumbai.in/",
+    text: "ISTE",
+    width: 230,
+    height: 120,
+  },
+  {
+    img: acm,
+    link: "https://tcet.acm.org/",
+    text: "ACM",
+    width: 160,
+    height: 120,
   },
   {
     img: iete,
+    link: "https://iete.tcetmumbai.in/",
     text: "IETE",
+    width: 160,
+    height: 120,
   },
   {
-    img: sort,
-    text: "SORT",
+    img: asce,
+    link: "https://ascetcet.github.io/index.html",
+    text: "ASCE",
+    width: 170,
+    height: 120,
+  },
+  {
+    img: mindbenders,
+    link: "https://mbc.tcetmumbai.in/",
+    text: "Mind Benders",
+    width: 160,
+    height: 120,
+  },
+  {
+    img: owasp,
+    link: "https://owasp.org/www-chapter-thakur-college-of-engineering-and-technology/",
+    text: "OWASP",
+    width: 160,
+    height: 120,
   },
   {
     img: iei,
     text: "IEI",
-  },
-  {
-    img: acm,
-    text: "ACM",
-  },
-  {
-    img: asce,
-    text: "ASCE",
+    width: 140,
+    height: 120,
   },
 ];
 
 const SpecialArr = [
+  {
+    img: genosisx,
+    link: "https://github.com/Genosisx",
+    text: "GenosisX",
+    width: 160,
+    height: 100,
+  },
+  {
+    img: alg,
+    link: "https://sourceforge.net/projects/arch-linux-gui/",
+    text: "Arch Linux GUI",
+    width: 140,
+    height: 120,
+  },
+  {
+    img: mindsdb,
+    link: "https://mindsdb.com/",
+    text: "MindsDB",
+    width: 220,
+    height: 120,
+  },
+  {
+    img: hacksquad,
+    link: "https://www.hacksquad.dev/",
+    text: "HackSquad",
+    width: 160,
+    height: 100,
+  },
 ];
 
 const SpoArr = [
 ];
 
 const CloudArr = [
-
+  {
+    img: vultr,
+    link: "https://www.vultr.com/",
+    text: "VULTR",
+    width: 140,
+    height: 120,
+  },  
 ];
 
 export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr };

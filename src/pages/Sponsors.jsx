@@ -6,11 +6,11 @@ import CloudSection from "../components/SponsorSection/CloudSection.jsx";
 function Sponsors() {
   return (
     <section className="">
-      <CommunitySection />
+      <SponsoredBy />
       <CollabSection />
       <SpecialSection />
-      <SponsoredBy />
       <CloudSection />
+      <CommunitySection />
     </section>
   );
 }

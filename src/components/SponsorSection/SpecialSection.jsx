@@ -19,13 +19,15 @@ function SpecialSection() {
               className="flex flex-col items-center justify-evenly"
               key={index}
             >
-              <img
-                src={image.img}
-                width={160}
-                height={120}
-                className="md:mb-3 rounded-xl"
-              />
-              <p className="text-lg font-medium text-white">{image.text}</p>
+              <a href={image.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={image.img}
+                  width={image.width}
+                  height={image.height}
+                  className="md:mb-3 rounded-xl"
+                />
+                <p className="text-lg font-medium text-white">{image.text}</p>
+              </a>
             </div>
           ))}
         </div>
