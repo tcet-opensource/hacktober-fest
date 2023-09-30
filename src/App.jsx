@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Sponsors from "./pages/Sponsors";
+import Partners from "./pages/Partners";
 
 function App() {
   // do not add css in this file
@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sponsors" element={<Sponsors />} />
+        <Route path="/partners" element={<Partners />} />
       </Routes>
       <Footer />
     </div>

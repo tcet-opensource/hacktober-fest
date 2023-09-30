@@ -54,7 +54,7 @@ const data = [
     ],
     addressData: [
       {
-        title: "Thakur college of enginnering and technology",
+        title: "Thakur College of Enginnering and Technology",
         address:
           "Thakur College Of Engineering And Technology.A-Block, Thakur Educational Campus, Shyamnarayan Thakur Marg, Thakur Village, Kandivali(E). Mumbai - 400101.",
       },

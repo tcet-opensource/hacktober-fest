@@ -1,10 +1,10 @@
-import docLogo from "/SponsorSection/docLogo.svg";
+import docLogo from "/PartnersSection/docLogo.svg";
 import { SponArr, SpecialArr } from "./data.js";
-import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
+import sponsorGradient from "/PartnersSection/sponsorGradient.svg";
 function SpecialSection() {
   return (
     <section className="">
-      <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
+      {/* <img src={sponsorGradient} className="absolute w-1/3 h-5/6" /> */}
       <div className="px-6 py-9 md:p-16">
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12 items-center justify-center flex" key={index}>
@@ -19,13 +19,15 @@ function SpecialSection() {
               className="flex flex-col items-center justify-evenly"
               key={index}
             >
-              <img
-                src={image.img}
-                width={160}
-                height={120}
-                className="md:mb-3 rounded-xl"
-              />
-              <p className="text-lg font-medium text-white">{image.text}</p>
+              <a href={image.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={image.img}
+                  width={image.width}
+                  height={image.height}
+                  className="md:mb-3 rounded-xl"
+                />
+                <p className="text-lg font-medium text-white">{image.text}</p>
+              </a>
             </div>
           ))}
         </div>
