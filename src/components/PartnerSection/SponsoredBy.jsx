@@ -1,7 +1,7 @@
-import docLogo from "/SponsorSection/docLogo.svg";
-import { SponArr, CollabArr } from "./data.js";
-import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
-function CollabSection() {
+import docLogo from "/PartnersSection/docLogo.svg";
+import { SponArr, SpoArr } from "./data.js";
+import sponsorGradient from "/PartnersSection/sponsorGradient.svg";
+function SponsoredBy() {
   return (
     <section className="">
       <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
@@ -9,25 +9,23 @@ function CollabSection() {
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12 items-center justify-center flex" key={index}>
             <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
-              {data.collab}
+              {data.sponsors}
             </p>
           </div>
         ))}
         <div className="flex flex-wrap justify-around gap-5">
-          {CollabArr.map((image, index) => (
+          {SpoArr.map((image, index) => (
             <div
               className="flex flex-col items-center justify-evenly"
               key={index}
             >
-              <a href={image.link} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={image.img}
-                  width={image.width}
-                  height={image.height}
-                  className="md:mb-3 rounded-xl"
-                />
-                <p className="text-lg font-medium text-white">{image.text}</p>
-              </a>
+              <img
+                src={image.img}
+                width={160}
+                height={120}
+                className="md:mb-3 rounded-xl"
+              />
+              <p className="text-lg font-medium text-white">{image.text}</p>
             </div>
           ))}
         </div>
@@ -36,4 +34,4 @@ function CollabSection() {
   );
 }
 
-export default CollabSection;
+export default SponsoredBy;

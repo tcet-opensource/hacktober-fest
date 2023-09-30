@@ -1,7 +1,7 @@
-import docLogo from "/SponsorSection/docLogo.svg";
+import docLogo from "/PartnersSection/docLogo.svg";
 import { SponArr, ImgArr } from "./data";
-import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
-function SponsorSection() {
+import sponsorGradient from "/PartnersSection/sponsorGradient.svg";
+function PartnersSection() {
   return (
     <section id="sponserSection" className="">
       <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
@@ -50,5 +50,5 @@ function SponsorSection() {
   );
 }
 
-export default SponsorSection;
+export default PartnersSection;
 

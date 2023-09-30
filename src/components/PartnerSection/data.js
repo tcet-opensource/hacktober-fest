@@ -1,18 +1,18 @@
-import owasp from "/SponsorSection/OWASP.png";
-import foss from "/SponsorSection/FOSS.png";
-import rctcet from "/SponsorSection/RCTCET.png";
-import iei from "/SponsorSection/IEI.png";
-import iete from "/SponsorSection/IETE.png";
-import acm from "/SponsorSection/ACM.png";
-import sort from "/SponsorSection/SORT.png";
-import asce from "/SponsorSection/ASCE.png";
-import vultr from "/SponsorSection/VULTR.png";
-import mindsdb from "/SponsorSection/MINDSDB.jpg";
-import hacksquad from "/SponsorSection/HACKSQUAD.png";
-import alg from "/SponsorSection/ALG.png";
-import genosisx from "/SponsorSection/GENOSISX.jpeg";
-import mindbenders from "/SponsorSection/MINDBENDERS.png";
-import iste from "/SponsorSection/ISTE.png";
+import owasp from "/PartnersSection/OWASP.png";
+import foss from "/PartnersSection/FOSS.png";
+import rctcet from "/PartnersSection/RCTCET.png";
+import iei from "/PartnersSection/IEI.png";
+import iete from "/PartnersSection/IETE.png";
+import acm from "/PartnersSection/ACM.png";
+import sort from "/PartnersSection/SORT.png";
+import asce from "/PartnersSection/ASCE.png";
+import vultr from "/PartnersSection/VULTR.png";
+import mindsdb from "/PartnersSection/MINDSDB.jpg";
+import hacksquad from "/PartnersSection/HACKSQUAD.png";
+import alg from "/PartnersSection/ALG.png";
+import genosisx from "/PartnersSection/GENOSISX.jpeg";
+import mindbenders from "/PartnersSection/MINDBENDERS.png";
+import iste from "/PartnersSection/ISTE.png";
 // import CloudSection from "./CloudSection.jsx";
 
 
@@ -28,16 +28,16 @@ const SponArr = [
 ];
 const CollabArr = [
   {
-    img: foss,
-    text: "FOSS Club of TCET",
-    width: 350,
-    height: 120,
-  },
-  {
     img: rctcet,
     link: "https://www.rc.tcetmumbai.in/",
     text: "Rotaract Club of TCET",
     width: 160,
+    height: 120,
+  },
+  {
+    img: foss,
+    text: "FOSS Club of TCET",
+    width: 350,
     height: 120,
   },
 ];

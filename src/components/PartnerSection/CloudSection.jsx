@@ -1,7 +1,7 @@
-import docLogo from "/SponsorSection/docLogo.svg";
-import { SponArr, SpecialArr } from "./data.js";
-import sponsorGradient from "/SponsorSection/sponsorGradient.svg";
-function SpecialSection() {
+import docLogo from "/PartnersSection/docLogo.svg";
+import { SponArr, CloudArr } from "./data.js";
+import sponsorGradient from "/PartnersSection/sponsorGradient.svg";
+function CloudSection() {
   return (
     <section className="">
       <img src={sponsorGradient} className="absolute w-1/3 h-5/6" />
@@ -9,12 +9,12 @@ function SpecialSection() {
         {SponArr.map((data, index) => (
           <div className="text-[#D6D9F6] md:mb-16 mb-12 items-center justify-center flex" key={index}>
             <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
-              {data.special}
+              {data.cloud}
             </p>
           </div>
         ))}
         <div className="flex flex-wrap justify-around gap-5">
-          {SpecialArr.map((image, index) => (
+          {CloudArr.map((image, index) => (
             <div
               className="flex flex-col items-center justify-evenly"
               key={index}
@@ -36,4 +36,4 @@ function SpecialSection() {
   );
 }
 
-export default SpecialSection;
+export default CloudSection;
