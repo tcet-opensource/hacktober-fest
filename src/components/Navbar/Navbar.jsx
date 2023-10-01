@@ -74,19 +74,19 @@ export default function Navbar() {
                   {step.header}
                 </a>
               ))}
-              <NavLink to="/sponsors">
+              <NavLink to="/partners">
                 <a
                   onClick={handleScroll}
                   className="text-[#E4E7EC] hover:text-[#8369A8] px-2 py-1 rounded-md text-md font-medium cursor-pointer"
                 >
-                  Sponsors
+                  Partners
                 </a>
               </NavLink>
             </div>
           </div>
 
           <div className="hidden  md:flex gap-4 mt-2">
-            <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg">
+            <button className="rounded-xl px-4 py-2 border-2 border-gray-500 text-lg hover:bg-[#4C58FE] hover:border-[#4C58FE]">
               <div className="flex gap-1.5 text-white">
                 <img src={discord} alt="" />
                 <a
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </a>
               </div>
             </button>
-            <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE]">
+            <button className="text-lg px-4 py-2 text-white rounded-lg mt-0 bg-[#4C58FE] hover:bg-[#8369A8] hover:text-[#FFFFFF]">
               <a
                 href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai"
                 target="_blank"
@@ -143,12 +143,14 @@ export default function Navbar() {
               </a>
             ))}
 
-            <a
-              onClick={handleScroll}
-              className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Partners
-            </a>
+            <NavLink to="/partners">
+                <a
+                  onClick={handleScroll}
+                  className="text-center cursor-pointer text-gray-300 hover:text-[#8B70AD] block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Partners
+                </a>
+              </NavLink>
           </div>
         </div>
       )}
