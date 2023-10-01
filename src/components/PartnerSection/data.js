@@ -15,6 +15,7 @@ import mindbenders from "/PartnersSection/MINDBENDERS.png";
 import iste from "/PartnersSection/ISTE.png";
 import acmsigai from "/PartnersSection/ACMSIGAI.png"
 import gfg from "/PartnersSection/GFGTCET.jpg";
+import sdst from "/PartnersSection/SDST.png";
 // import CloudSection from "./CloudSection.jsx";
 
 
@@ -74,12 +75,6 @@ const CommunityArr = [
     height: 120,
   },
   {
-    img: gfg,
-    text: "GFG TCET",
-    width: 160,
-    height: 120,
-  },
-  {
     img: asce,
     link: "https://ascetcet.github.io/index.html",
     text: "ASCE",
@@ -109,6 +104,12 @@ const CommunityArr = [
   {
     img: acmsigai,
     text: "ACM-SigAI",
+    width: 160,
+    height: 120,
+  },
+  {
+    img: sdst,
+    text: "SDST",
     width: 160,
     height: 120,
   },
