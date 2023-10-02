@@ -25,7 +25,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 grid-rows-3 lg:gap-x-40 gap-x-28 gap-y-2 text-[#ACB1FF] text-lg font-medium justify-items-start items-center">
+        <div className="grid grid-cols-2 grid-rows-3 lg:gap-x-40 gap-x-28 text-[#ACB1FF] text-lg font-medium justify-items-start items-center">
           {data.map((item) => {
             return item.linkData1.map((value, i) => (
               <a key={i} href={value.link}>
