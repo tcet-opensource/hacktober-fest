@@ -9,25 +9,25 @@ const repos = [
     name: "erp-backend",
   },
   {
-    name: "tnp-website",
-  },
-  {
-    name: "iste-website",
-  },
-  {
-    name: "fillmycycle",
-  },
-  {
-    name: "tcet-website",
-  },
-  {
     name: "documentation",
+  },
+  {
+    name: "resume-screener-frontend",
   },
   {
     name: "tcet-linux-website",
   },
   {
     name: "Activity-Dekho",
+  },
+  {
+    name: "fillmycycle",
+  },
+  {
+    name: "tnp-website",
+  },
+  {
+    name: "tcet-website",
   },
 ];
 
