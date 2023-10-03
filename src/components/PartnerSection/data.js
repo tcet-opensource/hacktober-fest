@@ -16,6 +16,7 @@ import iste from "/PartnersSection/ISTE.png";
 import acmsigai from "/PartnersSection/ACMSIGAI.png"
 import gfg from "/PartnersSection/GFGTCET.jpg";
 import sdst from "/PartnersSection/SDST.png";
+import MLH from "/PartnersSection/MLH.svg";
 // import CloudSection from "./CloudSection.jsx";
 
 
@@ -26,9 +27,19 @@ const SponArr = [
     cloud: "Cloud Partner",
     sponsors: "Sponsors",
     special: "Special Partners",
-
+    mlh : "Hactoberfest Partner",
   },
 ];
+
+const MLHArr = [
+  {
+    img: MLH,
+    link: "https://mlh.io/",
+    text: "Major League Hacking",
+    width: 160,
+    height: 120,
+  }
+]
 const CollabArr = [
   {
     img: rctcet,
@@ -159,4 +170,4 @@ const CloudArr = [
   },  
 ];
 
-export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr };
+export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr , MLHArr };
