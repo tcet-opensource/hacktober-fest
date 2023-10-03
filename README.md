@@ -2,6 +2,10 @@
 
 **Note: The Hacktober Fest page is built using React; a JavaScript library for building user interfaces and Vite; a frontend tool used for building fast and optimized web applications.**
 
+### Powered by:
+<img width="311" alt="mlh-logo-color" src="https://github.com/tcet-opensource/hacktober-fest/assets/55846983/d5ccae96-86a7-4fed-8f00-e9f1d0aa5cac">
+
+
 ### Steps to run the site on your local system: 
 These are the steps you need to follow to get this site on your local system.
 
