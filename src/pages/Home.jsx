@@ -10,8 +10,8 @@ function Home() {
     <div>
       <HeroSection />
       <Explore />
-      <FAQSection />
       <RegisterSection />
+      <FAQSection />
     </div>
   );
 }
