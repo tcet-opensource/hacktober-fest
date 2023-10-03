@@ -13,7 +13,7 @@ function CollabSection() {
             </p>
           </div>
         ))}
-        <div className="flex flex-wrap justify-around gap-5">
+        <div className="flex flex-wrap justify-around gap-6">
           {CollabArr.map((image, index) => (
             <div
               className="flex flex-col items-center justify-evenly"
@@ -24,9 +24,9 @@ function CollabSection() {
                   src={image.img}
                   width={image.width}
                   height={image.height}
-                  className="md:mb-3 rounded-xl"
+                  className="md:mb-3 rounded-xl ml-5"
                 />
-                <p className="text-lg font-medium text-white">{image.text}</p>
+                <p className="text-xl font-medium text-white mt-6">{image.text}</p>
               </a>
             </div>
           ))}

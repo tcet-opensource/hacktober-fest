@@ -26,7 +26,7 @@ function CloudSection() {
                   height={image.height}
                   className="md:mb-3 rounded-xl"
                 />
-                <p className="text-lg font-medium text-white">{image.text}</p>
+                <p className="text-xl font-medium text-white mt-6">{image.text}</p>
               </a>
             </div>
           ))}

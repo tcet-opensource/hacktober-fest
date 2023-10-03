@@ -25,7 +25,7 @@ function SponsoredBy() {
                 height={120}
                 className="md:mb-3 rounded-xl"
               />
-              <p className="text-lg font-medium text-white">{image.text}</p>
+              <p className="text-xl font-medium text-white mt-6">{image.text}</p>
             </div>
           ))}
         </div>
