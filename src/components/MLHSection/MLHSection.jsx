@@ -4,7 +4,7 @@ export default function MLHSection() {
   return (
     <section className="">
       <div className="px-6 py-9 md:p-16">
-        <div className="text-[#D6D9F6] md:mb-16 mb-12 items-center justify-center flex">
+        <div className="text-[#D6D9F6] mb-12 items-center justify-center flex">
           <p className="text-[#E0E2FF] text-3xl md:text-4xl font-medium mb-3 font-spline">
             Powered By
           </p>
