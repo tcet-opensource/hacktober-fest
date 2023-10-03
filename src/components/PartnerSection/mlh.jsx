@@ -12,19 +12,21 @@ function MLH() {
             </p>
           </div>
         ))}
-        <div className="flex flex-wrap justify-around gap-5">
+        <div className="flex flex-wrap justify-around gap-5 ">
           {MLHArr.map((image, index) => (
             <div
               className="flex flex-col items-center justify-evenly"
               key={index}
             >
               <a href={image.link} target="_blank" rel="noopener noreferrer">
+                <div className="bg-slate-200 p-4 rounded-xl">
                 <img
                   src={image.img}
                   width={image.width}
                   height={image.height}
-                  className="md:mb-3 ml-5"
+                  className="md:mb-3 ml-1"
                 />
+                </div>
                 <p className="text-xl font-medium text-white mt-6">{image.text}</p>
               </a>
             </div>

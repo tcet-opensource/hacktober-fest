@@ -16,12 +16,14 @@ export default function MLHSection() {
               key={index}
             >
               <a href={image.link} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={image.img}
-                  width={image.width}
-                  height={image.height}
-                  className="md:mb-3 ml-5"
-                />
+                <div className="bg-slate-200 p-4 rounded-xl">
+                  <img
+                    src={image.img}
+                    width={image.width}
+                    height={image.height}
+                    className="md:mb-3 ml-1"
+                  />
+                </div>
                 <p className="text-xl font-medium text-white mt-6">
                   {image.text}
                 </p>
