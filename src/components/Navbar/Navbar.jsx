@@ -86,7 +86,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden  md:flex gap-4 mt-2">
-            <button className="rounded-xl px-4 py-0.5 border-2 border-gray-500 text-lg hover:opacity-70 transition duration-300 ease-in-out">
+            <button className="rounded-xl p-2 border-2 border-gray-500 text-lg hover:opacity-70 transition duration-300 ease-in-out">
               <div className="flex gap-1.5 text-white">
                 <img src={discord} alt="" />
                 <a
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </a>
               </div>
             </button>
-            <button className="text-lg px-4 py-0.5 text-white rounded-lg mt-0 bg-[#4C58FE] hover:bg-[#3442D4] transition duration-300 ease-in-out">
+            <button className="text-lg p-2 text-white rounded-lg mt-0 bg-[#4C58FE] hover:bg-[#3442D4] transition duration-300 ease-in-out">
               <a
                 href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai"
                 target="_blank"
