@@ -27,7 +27,7 @@ const SponArr = [
     cloud: "Cloud Partner",
     sponsors: "Sponsors",
     special: "Special Partners",
-    mlh : "Hactoberfest Partner",
+    mlh : "Hacktoberfest Partner",
   },
 ];
 
