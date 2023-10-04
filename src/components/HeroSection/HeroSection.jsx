@@ -67,7 +67,7 @@ function HeroSection() {
                 </a>
 
                 <img
-                  src="/HeroSection/Line 6.png"
+                  src="/HeroSection/Line.png"
                   className=" absolute hidden lg:block -bottom-10 left-1/2 transform -translate-y-1/2 z-[-1] w-1 h-[333px] opacity-60"
                 />
               </div>
@@ -75,7 +75,7 @@ function HeroSection() {
 
             <div className="w-full lg:w-1/2   ">
               <img
-                src="/HeroSection/Ellipse 24.png"
+                src="/HeroSection/Ellipse.png"
                 className="absolute bottom-0 right-0 z-[-1] w-1/2 h-3/4 flex-shrink-0 "
               />
               <img
