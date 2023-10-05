@@ -5,9 +5,8 @@ const contentArray = [
     id: 1,
     title: "Hacktoberfest TCET-OpenSource",
     description:
-      "Welcome to Hacktoberfest, the exhilarating month-long celebration of open source software! " +
-      "Whether you're a coding expert or just starting out, dive in this October to contribute, collaborate, and make a lasting impact. " +
-      "Together, we'll ignite the open source world. Welcome aboard!",
+      "Welcome to Hacktoberfest! Join us this October to contribute, collaborate," +
+      "and make an impact in the open source community. Let's ignite the open source world together. Welcome aboard!" 
   },
 ];
 
@@ -43,28 +42,29 @@ function HeroSection() {
 
               <div className="flex flex-row gap-3">
                 <a
-                  href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai"
-                  target="_blank"
-                  className="z-20"
-                >
-                  <button className="flex items-center justify-center p-2 button-one rounded-xl button-one bg-[#4C58FE] shadow-lg text-white text-lg font-semibold hover:bg-[#3442D4] transition duration-300 ease-in-out">
-                    Register Now
-                  </button>
-                </a>
+  href="https://events.mlh.io/events/10259-hacktoberfest-2023-in-mumbai"
+  target="_blank"
+  className="z-20"
+>
+  <button className="flex items-center justify-center p-2 button-one rounded-xl button-one bg-[#4C58FE] shadow-lg text-white text-lg font-semibold hover:bg-[#3442D4] transition duration-300 ease-in-out w-36"> 
+    Register Now
+  </button>
+</a>
 
-                <a
-                  href="https://opensource.tcetmumbai.in/"
-                  target="_blank"
-                  className="z-20"
-                >
-                  <button className="flex p-2 justify-center items-center rounded-xl border-2 border-[#3C3E5F] text-white text-lg font-medium hover:opacity-70 transition duration-300 ease-in-out">
-                    About Us
-                    <img
-                      src="/HeroSection/chevron-right.svg"
-                      className="gap-y-2 "
-                    />
-                  </button>
-                </a>
+<a
+  href="https://opensource.tcetmumbai.in/"
+  target="_blank"
+  className="z-20"
+>
+  <button className="flex p-2 justify-center items-center rounded-xl border-2 border-[#3C3E5F] text-white text-lg font-medium hover:opacity-70 transition duration-300 ease-in-out w-36"> 
+    About Us
+    <img
+      src="/HeroSection/chevron-right.svg"
+      className="gap-y-2 "
+    />
+  </button>
+</a>
+
 
                 <img
                   src="/HeroSection/Line 6.png"
