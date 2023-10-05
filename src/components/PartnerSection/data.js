@@ -34,7 +34,7 @@ const SponArr = [
 const MLHArr = [
   {
     img: MLH,
-    link: "https://mlh.io/",
+    link: "https://mlh.io/?utm_campaign=mlh-hackers-hacktoberfest_2023_in_mumbai&utm_medium=website&utm_source=event-external",
     text: "Major League Hacking",
     width: 160,
     height: 120,
