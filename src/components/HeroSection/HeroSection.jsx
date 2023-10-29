@@ -52,7 +52,7 @@ function HeroSection() {
 </a>
 
 <a
-  href="https://opensource.tcetmumbai.in/"
+  href="https://opensource.tcetmumbai.in/docs/about-tcetopensource/"
   target="_blank"
   className="z-20"
 >
