@@ -13,21 +13,22 @@ import alg from "/PartnersSection/ALG.png";
 import genosisx from "/PartnersSection/GENOSISX.jpeg";
 import mindbenders from "/PartnersSection/MINDBENDERS.png";
 import iste from "/PartnersSection/ISTE.png";
-import acmsigai from "/PartnersSection/ACMSIGAI.png"
+import acmsigai from "/PartnersSection/ACMSIGAI.png";
 import gfg from "/PartnersSection/GFGTCET.jpg";
 import sdst from "/PartnersSection/SDST.png";
 import MLH from "/PartnersSection/MLH.svg";
+import push from "/PartnersSection/push.jpeg";
 // import CloudSection from "./CloudSection.jsx";
-
 
 const SponArr = [
   {
     community: "Community Partners",
-    collab : "Collaboration Partners",
+    collab: "Collaboration Partners",
     cloud: "Cloud Partner",
     sponsors: "Sponsors",
     special: "Special Partners",
-    mlh : "Hacktoberfest Partner",
+    mlh: "Hacktoberfest Partner",
+    spon: "Sponsors",
   },
 ];
 
@@ -38,8 +39,8 @@ const MLHArr = [
     text: "Major League Hacking",
     width: 160,
     height: 120,
-  }
-]
+  },
+];
 const CollabArr = [
   {
     img: rctcet,
@@ -48,12 +49,12 @@ const CollabArr = [
     width: 160,
     height: 120,
   },
-  {
-    img: foss,
-    text: "FOSS Club of TCET",
-    width: 350,
-    height: 120,
-  },
+  // {
+  //   img: foss,
+  //   text: "FOSS Club of TCET",
+  //   width: 350,
+  //   height: 120,
+  // },
 ];
 
 const CommunityArr = [
@@ -157,8 +158,7 @@ const SpecialArr = [
   // },
 ];
 
-const SpoArr = [
-];
+const SpoArr = [];
 
 const CloudArr = [
   {
@@ -167,7 +167,25 @@ const CloudArr = [
     text: "VULTR",
     width: 140,
     height: 120,
-  },  
+  },
 ];
 
-export { SponArr, CollabArr, CommunityArr, SpecialArr, SpoArr , CloudArr , MLHArr };
+const Spon = [
+  {
+    img: push,
+    text: "Push Protocol",
+    width: 160,
+    height: 120,
+  },
+];
+
+export {
+  SponArr,
+  CollabArr,
+  CommunityArr,
+  SpecialArr,
+  SpoArr,
+  CloudArr,
+  MLHArr,
+  Spon,
+};
