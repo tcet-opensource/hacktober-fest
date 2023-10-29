@@ -53,9 +53,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center gap- rounded-2xls">
             <img src={logo} alt="" className="h-12" />
-            <a href="/" className="text-white">
+            <a href="https://opensource.tcetmumbai.in/" className="text-white">
               <h2 className="text-white font-semibold text-base pr-2.5">
-                TCET OpenSource
+                TCET Open Source
               </h2>
             </a>
           </div>
