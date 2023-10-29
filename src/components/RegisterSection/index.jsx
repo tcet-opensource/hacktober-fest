@@ -13,7 +13,7 @@ export default function RegisterSection() {
             <br />
             Hacktober Fest
           </h2>
-          <p className="justify-center mt-3 px-4 text-center text-md sm:text-base md:text-xl">
+          <p className="justify-center mt-3 px-4 py-4 text-center text-md sm:text-base md:text-xl max-w-md">
             "Hacktoberfest: Code, collaborate, conquer!"
             <br />
             Join us, make your mark, win rewards by contributing to open-source
